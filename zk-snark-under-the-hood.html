@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zk-SNARKs: Under the Hood | OGIest</title>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <body
+    x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'b eh': darkMode === true}"
+  >
+    <!-- ===== Header Start ===== -->
+    <header
+  class="g s r vd ya cj"
+  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+>
+  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+    <div class="vd to/4 tc wf yf">
+      <a href="/">
+        <img class="om" src="images/logo-light.png" alt="Logo Light" />
+        <img class="xc nm" src="images/logo-dark.png" alt="Logo Dark" />
+      </a>
+
+      <!-- Hamburger Toggle BTN -->
+      <button class="po rc" @click="navigationOpen = !navigationOpen">
+        <span class="rc i pf re pd">
+          <span class="du-block h q vd yc">
+            <span class="rc i r s eh um tg te rd eb ml jl dl" :class="{ 'ue el': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl fl" :class="{ 'ue qr': !navigationOpen }"></span>
+            <span class="rc i r s eh um tg te rd eb ml jl gl" :class="{ 'ue hl': !navigationOpen }"></span>
+          </span>
+          <span class="du-block h q vd yc lf">
+            <span class="rc eh um tg ml jl el h na r ve yc" :class="{ 'sd dl': !navigationOpen }"></span>
+            <span class="rc eh um tg ml jl qr h s pa vd rd" :class="{ 'sd rr': !navigationOpen }"></span>
+          </span>
+        </span>
+      </button>
+      <!-- Hamburger Toggle BTN -->
+    </div>
+
+    <div
+      class="vd wo/4 sd qo f ho oo wf yf"
+      :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
+    >
+      <nav>
+      </nav>
+
+      <div class="tc wf ig pb no">
+        <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
+          <label class="rc ab i">
+            <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
+            <!-- Icon Sun -->
+            <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+            </svg>
+            <!-- Icon Sun -->
+            <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+          </label>
+        </div>
+        <ul class="tc _o sf yo cg ep">
+        <li><a href="about.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">About</a></li>
+        <li><a href="/" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- ===== Header End ===== -->
+
+    <main>
+      <!-- ===== Blog Single Start ===== -->
+      <section class="gj qp gr hj rp hr">
+        <div class="bb ze ki xn 2xl:ud-px-0">
+          <div class="tc sf yo zf kq">
+            <div class="bb ze">
+              <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
+                <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">Zk-SNARKs: Under the Hood</h1><br />
+                <center><img src="https://cdn-images-1.medium.com/v2/resize:fit:2000/1*gOI0njM1tPSvmvZuIUe0MA.png" style="max-width:100%;" alt="Blog" /></center>
+                <br />
+                <ul class="tc uf cg 2xl:ud-gap-15 fb">
+                  <li><span class="rc kk wm">Author: </span> Vitalik Buterin</li>
+                  <li><span class="rc kk wm">Published On: </span> Feb 01, 2017</li>
+                  <li><span class="rc kk wm">Category: </span> General</li>
+                </ul>
+
+                <p style="text-align: justify;" class="ob"><em>This is the third part of a series of articles explaining how the technology behind zk-SNARKs works; the previous articles on <a href="https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649">quadratic arithmetic programs</a> and <a href="https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627">elliptic curve pairings</a> are required reading, and this article will assume knowledge of both concepts. Basic knowledge of what zk-SNARKs are and what they do is also assumed. See also <a href="https://blog.ethereum.org/2016/12/05/zksnarks-in-a-nutshell/">Christian Reitwiessner's article here</a> for another technical introduction.</em></p>
+                <p style="text-align: justify;" class="ob">In the previous articles, we introduced the quadratic arithmetic program, a way of representing any computational problem with a polynomial equation that is much more amenable to various forms of mathematical trickery. We also introduced elliptic curve pairings, which allow a very limited form of one-way homomorphic encryption that lets you do equality checking. Now, we are going to start from where we left off, and use elliptic curve pairings, together with a few other mathematical tricks, in order to allow a prover to prove that they know a solution for a particular QAP without revealing anything else about the actual solution.</p>
+                <p style="text-align: justify;" class="ob">This article will focus on the <a href="https://eprint.iacr.org/2013/279.pdf">Pinocchio protocol</a> by Parno, Gentry, Howell and Raykova from 2013 (often called PGHR13); there are a few variations on the basic mechanism, so a zk-SNARK scheme implemented in practice may work slightly differently, but the basic principles will in general remain the same.</p>
+                <p style="text-align: justify;" class="ob">To start off, let us go into the key cryptographic assumption underlying the security of the mechanism that we are going to use: the <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjz1-Ht7-vRAhVEr1QKHfvtAKIQFggaMAA&amp;url=https%3A%2F%2Fwww.iacr.org%2Farchive%2Fcrypto2004%2F31520273%2Fbp.pdf&amp;usg=AFQjCNFJk9kCq86ms46ZQVkMgAxTbPWEdg&amp;bvm=bv.145822982,d.cGw">*knowledge-of-exponent</a>* assumption.</p><br />
+                <center>
+                <img src="https://cdn-images-1.medium.com/max/2000/1*xX1YSBNSFjmkNKR2kP-TFA.png" style="max-width:100%;" alt="Blog" />
+                </center>
+                <p style="text-align: justify;" class="ob">Basically, if you get a pair of points <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, where <span class="math inline">\(P \cdot k = Q\)</span>, and you get a point <span class="math inline">\(C\)</span>, then it is not possible to come up with <span class="math inline">\(C \cdot k\)</span> unless <span class="math inline">\(C\)</span> is "derived" from <span class="math inline">\(P\)</span> in some way that you know. This may seem intuitively obvious, but this assumption actually cannot be derived from any other assumption (eg. discrete log hardness) that we usually use when proving security of elliptic curve-based protocols, and so zk-SNARKs do in fact rest on a somewhat shakier foundation than elliptic curve cryptography more generally — although it's still sturdy enough that most cryptographers are okay with it.</p>
+                <p style="text-align: justify;" class="ob">Now, let's go into how this can be used. Supposed that a pair of points <span class="math inline">\((P, Q)\)</span> falls from the sky, where <span class="math inline">\(P \cdot k = Q\)</span>, but nobody knows what the value of <span class="math inline">\(k\)</span> is. Now, suppose that I come up with a pair of points <span class="math inline">\((R, S)\)</span> where <span class="math inline">\(R \cdot k = S\)</span>. Then, the KoE assumption implies that the only way I could have made that pair of points was by taking <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, and multiplying both by some factor r <em>that I personally know</em>. Note also that thanks to the magic of elliptic curve pairings, checking that <span class="math inline">\(R = k \cdot S\)</span> <em>doesn't actually require knowing <span class="math inline">\(k\)</span> </em> - instead, you can simply check whether or not <span class="math inline">\(e(R, Q) = e(P, S)\)</span>.</p>
+                <p style="text-align: justify;" class="ob">Let's do something more interesting. Suppose that we have ten pairs of points fall from the sky: <span class="math inline">\((P_1, Q_1), (P_2, Q_2)... (P_{10}, Q_{10})\)</span>. In all cases, <span class="math inline">\(P_i \cdot k = Q_i\)</span>. Suppose that I then provide you with a pair of points <span class="math inline">\((R, S)\)</span> where <span class="math inline">\(R \cdot k = S\)</span>. What do you know now? <em>You know that <span class="math inline">\(R\)</span> is some linear combination <span class="math inline">\(P_1 \cdot i_1 + P_2 \cdot i_2 + ... + P_{10} \cdot i_{10}\)</span>, where I know the coefficients <span class="math inline">\(i_1, i_2 ... i_{10}\)</span>. </em>That is, the only way to arrive at such a pair of points <span class="math inline">\((R, S)\)</span> is to take some multiples of <span class="math inline">\(P_1, P_2 ... P_{10}\)</span> and add them together, and make the same calculation with <span class="math inline">\(Q_1, Q_2 ... Q_{10}\)</span>.</p>
+                <p style="text-align: justify;" class="ob">Note that, given any specific set of <span class="math inline">\(P_1...P_{10}\)</span> points that you might want to check linear combinations for, you can't actually create the accompanying <span class="math inline">\(Q_1...Q_{10}\)</span> points without knowing what <span class="math inline">\(k\)</span> is, and if you do know what <span class="math inline">\(k\)</span> is then you can create a pair <span class="math inline">\((R, S)\)</span> where <span class="math inline">\(R \cdot k = S\)</span> for whatever <span class="math inline">\(R\)</span> you want, without bothering to create a linear combination. Hence, for this to work it's absolutely imperative that whoever creates those points is trustworthy and actually deletes <span class="math inline">\(k\)</span> once they created the ten points. <strong>This is where the concept of a "trusted setup" comes from</strong>.</p>
+                <p style="text-align: justify;" class="ob">Remember that the solution to a QAP is a set of polynomials <span class="math inline">\((A, B, C)\)</span> such that <span class="math inline">\(A(x) \cdot B(x) - C(x) = H(x) \cdot Z(x)\)</span>, where:</p>
+                <ul>
+                <li><p><span class="math inline">\(A\)</span> is a linear combination of a set of polynomials <span class="math inline">\(\{A_1...A_m\}\)</span></p></li>
+                <li><p><span class="math inline">\(B\)</span> is the linear combination of <span class="math inline">\(\{B_1...B_m\}\)</span> with the same coefficients</p></li>
+                <li><p><span class="math inline">\(C\)</span> is a linear combination of <span class="math inline">\(\{C_1...C_m\}\)</span> with the same coefficients</p></li>
+                </ul>
+                <p style="text-align: justify;" class="ob">The sets <span class="math inline">\(\{A_1...A_m\}, \{B_1...B_m\}\)</span> and <span class="math inline">\(\{C_1...C_m\}\)</span> and the polynomial <span class="math inline">\(Z\)</span> are part of the problem statement.</p>
+                <p style="text-align: justify;" class="ob">However, in most real-world cases, <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> are extremely large; for something with many thousands of circuit gates like a hash function, the polynomials (and the factors for the linear combinations) may have many thousands of terms. Hence, instead of having the prover provide the linear combinations directly, we are going to use the trick that we introduced above to have the prover prove that they are providing something which is a linear combination, but without revealing anything else.</p>
+                <p style="text-align: justify;" class="ob">You might have noticed that the trick above works on elliptic curve points, not polynomials. Hence, what actually happens is that we add the following values to the trusted setup:</p>
+                <ul>
+                <li><p><span class="math inline">\(G \cdot A_1(t), G \cdot A_1(t) \cdot k_a\)</span></p></li>
+                <li><p><span class="math inline">\(G \cdot A_2(t), G \cdot A_2(t) \cdot k_a\)</span></p></li>
+                <li><p>...</p></li>
+                <li><p><span class="math inline">\(G \cdot B_1(t), G \cdot B_1(t) \cdot k_b\)</span></p></li>
+                <li><p><span class="math inline">\(G \cdot B_2(t), G \cdot B_2(t) \cdot k_b\)</span></p></li>
+                <li><p>...</p></li>
+                <li><p><span class="math inline">\(G \cdot C_1(t), G \cdot C_1(t) \cdot k_c\)</span></p></li>
+                <li><p><span class="math inline">\(G \cdot C_2(t), G \cdot C_2(t) \cdot k_c\)</span></p></li>
+                <li><p>...</p></li>
+                </ul>
+                <p style="text-align: justify;" class="ob">You can think of t as a "secret point" at which the polynomial is evaluated. <span class="math inline">\(G\)</span> is a "generator" (some random elliptic curve point that is specified as part of the protocol) and <span class="math inline">\(t, k_a, k_b\)</span> and <span class="math inline">\(k_c\)</span> are "toxic waste", numbers that absolutely must be deleted at all costs, or else whoever has them will be able to make fake proofs. Now, if someone gives you a pair of points <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span> such that <span class="math inline">\(P \cdot k_a = Q\)</span> (reminder: we don't need <span class="math inline">\(k_a\)</span> to check this, as we can do a pairing check), then you know that what they are giving you is a linear combination of <span class="math inline">\(A_i\)</span> polynomials evaluated at <span class="math inline">\(t\)</span>.</p>
+                <p style="text-align: justify;" class="ob">Hence, so far the prover must give:</p>
+                <ul>
+                <li><p><span class="math inline">\(\pi _a = G \cdot A(t), \pi &#39;_a = G \cdot A(t) \cdot k_a\)</span></p></li>
+                <li><p><span class="math inline">\(\pi _b = G \cdot B(t), \pi &#39;_b = G \cdot B(t) \cdot k_b\)</span></p></li>
+                <li><p><span class="math inline">\(\pi _c = G \cdot C(t), \pi &#39;_c = G \cdot C(t) \cdot k_c\)</span></p></li>
+                </ul>
+                <p style="text-align: justify;" class="ob">Note that the prover doesn't actually need to know (and shouldn't know!) <span class="math inline">\(t, k_a, k_b\)</span> or <span class="math inline">\(k_c\)</span> to compute these values; rather, the prover should be able to compute these values just from the points that we're adding to the trusted setup.</p>
+                <p style="text-align: justify;" class="ob">The next step is to make sure that all three linear combinations have the same coefficients. This we can do by adding another set of values to the trusted setup: <span class="math inline">\(G \cdot (A_i(t) + B_i(t) + C_i(t)) \cdot b\)</span>, where <span class="math inline">\(b\)</span> is another number that should be considered "toxic waste" and discarded as soon as the trusted setup is completed. We can then have the prover create a linear combination with these values with the same coefficients, and use the same pairing trick as above to verify that this value matches up with the provided <span class="math inline">\(A + B + C\)</span>.</p>
+                <p style="text-align: justify;" class="ob">Finally, we need to prove that <span class="math inline">\(A \cdot B - C = H \cdot Z\)</span>. We do this once again with a pairing check:</p>
+                <p style="text-align: justify;" class="ob"><span class="math inline">\(e(\pi _a, \pi _b) / e(\pi _c, G) ?= e(\pi _h, G \cdot Z(t))\)</span></p>
+                <p style="text-align: justify;" class="ob">Where <span class="math inline">\(\pi _h= G \cdot H(t)\)</span>. If the connection between this equation and <span class="math inline">\(A \cdot B - C = H \cdot Z\)</span> does not make sense to you, go back and read the <a href="https://medium.com/@VitalikButerin/exploring-elliptic-curve-pairings-c73c1864e627">article on pairings</a>.</p>
+                <p style="text-align: justify;" class="ob">We saw above how to convert <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span> into elliptic curve points; <span class="math inline">\(G\)</span> is just the generator (ie. the elliptic curve point equivalent of the number one). We can add <span class="math inline">\(G \cdot Z(t)\)</span> to the trusted setup. <span class="math inline">\(H\)</span> is harder; <span class="math inline">\(H\)</span> is just a polynomial, and we predict very little ahead of time about what its coefficients will be for each individual QAP solution. Hence, we need to add yet more data to the trusted setup; specifically the sequence:</p>
+                <p style="text-align: justify;" class="ob"><span class="math inline">\(G, G \cdot t, G \cdot t^2, G \cdot t^3, G \cdot t^4 ...\)</span>.</p>
+                <p style="text-align: justify;" class="ob">In the Zcash trusted setup, the sequence here goes up to about 2 million; this is how many powers of <span class="math inline">\(t\)</span> you need to make sure that you will always be able to compute <span class="math inline">\(H(t)\)</span>, at least for the specific QAP instance that they care about. And with that, the prover can provide all of the information for the verifier to make the final check.</p>
+                <p style="text-align: justify;" class="ob">There is one more detail that we need to discuss. Most of the time we don't just want to prove in the abstract that some solution exists for some specific problem; rather, we want to prove either the correctness of some specific solution (eg. proving that if you take the word "cow" and SHA3 hash it a million times, the final result starts with 0x73064fe5), or that a solution exists if you restrict some of the parameters. For example, in a cryptocurrency instantiation where transaction amounts and account balances are encrypted, you want to prove that you know some decryption key k such that:</p>
+                <ol type="1">
+                <li><p><code>decrypt(old_balance, k) &gt;= decrypt(tx_value, k)</code></p></li>
+                <li><p><code>decrypt(old_balance, k) - decrypt(tx_value, k) = decrypt(new_balance, k)</code></p></li>
+                </ol>
+                <p style="text-align: justify;" class="ob">The encrypted <code>old_balance</code>, <code>tx_value</code> and <code>new_balance</code> should be specified publicly, as those are the specific values that we are looking to verify at that particular time; only the decryption key should be hidden. Some slight modifications to the protocol are needed to create a "custom verification key" that corresponds to some specific restriction on the inputs.</p>
+                <p style="text-align: justify;" class="ob">Now, let's step back a bit. First of all, here's the verification algorithm in its entirety, courtesy of ben <a href="https://eprint.iacr.org/2013/879.pdf">Sasson, Tromer, Virza and Chiesa</a>:</p><br />
+                <center>
+                <img src="https://cdn-images-1.medium.com/max/2000/1*gOI0njM1tPSvmvZuIUe0MA.png" style="max-width:100%;" alt="Blog" />
+                </center>
+                <p style="text-align: justify;" class="ob">The first line deals with parametrization; essentially, you can think of its function as being to create a "custom verification key" <em>for the specific instance of the problem</em> where some of the arguments are specified. The second line is the linear combination check for <span class="math inline">\(A, B\)</span> and <span class="math inline">\(C\)</span>; the third line is the check that the linear combinations have the same coefficients, and the fourth line is the product check <span class="math inline">\(A \cdot B - C = H \cdot Z\)</span>.</p>
+                <p style="text-align: justify;" class="ob">Altogether, the verification process is a few elliptic curve multiplications (one for each "public" input variable), and five pairing checks, one of which includes an additional pairing multiplication. The proof contains eight elliptic curve points: a pair of points each for <span class="math inline">\(A(t), B(t)\)</span> and <span class="math inline">\(C(t)\)</span>, a point <span class="math inline">\(\pi _k\)</span> for <span class="math inline">\(b \cdot (A(t) + B(t) + C(t))\)</span>, and a point <span class="math inline">\(\pi _h\)</span> for <span class="math inline">\(H(t)\)</span>. Seven of these points are on the <span class="math inline">\(F_p\)</span> curve (32 bytes each, as you can compress the <span class="math inline">\(y\)</span> coordinate to a single bit), and in the Zcash implementation one point (<span class="math inline">\(\pi _b\)</span>) is on the twisted curve in <span class="math inline">\(F_{p^2}\)</span> (64 bytes), so the total size of the proof is ~288 bytes.</p>
+                <p style="text-align: justify;" class="ob">The two computationally hardest parts of creating a proof are:</p>
+                <ul>
+                <li><p>Dividing <span class="math inline">\((A \cdot B - C) / Z\)</span> to get <span class="math inline">\(H\)</span> (algorithms based on the <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier transform</a> can do this in sub-quadratic time, but it's still quite computationally intensive)</p></li>
+                <li><p>Making the elliptic curve multiplications and additions to create the <span class="math inline">\(A(t), B(t), C(t)\)</span> and <span class="math inline">\(H(t)\)</span> values and their corresponding pairs</p></li>
+                </ul>
+                <p style="text-align: justify;" class="ob">The basic reason why creating a proof is so hard is the fact that what was a single binary logic gate in the original computation turns into an operation that must be cryptographically processed through elliptic curve operations if we are making a zero-knowledge proof out of it. This fact, together with the superlinearity of fast Fourier transforms, means that proof creation takes ~20–40 seconds for a Zcash transaction.</p>
+                <p style="text-align: justify;" class="ob">Another very important question is: can we try to make the trusted setup a little... less trust-demanding? Unfortunately we can't make it completely trustless; the KoE assumption itself precludes making independent pairs <span class="math inline">\((P_i, P_i \cdot k)\)</span> without knowing what <span class="math inline">\(k\)</span> is. However, we can increase security greatly by using <span class="math inline">\(N\)</span>-of-<span class="math inline">\(N\)</span> multiparty computation - that is, constructing the trusted setup between <span class="math inline">\(N\)</span> parties in such a way that as long as at least one of the participants deleted their toxic waste then you're okay.</p>
+                <p style="text-align: justify;" class="ob">To get a bit of a feel for how you would do this, here's a simple algorithm for taking an existing set (<span class="math inline">\(G, G \cdot t, G \cdot t^2, G \cdot t^3...\)</span>), and "adding in" your own secret so that you need both your secret and the previous secret (or previous set of secrets) to cheat.</p>
+                <p style="text-align: justify;" class="ob">The output set is simply:</p>
+                <p style="text-align: justify;" class="ob"><span class="math inline">\(G, (G \cdot t) \cdot s, (G \cdot t^2) \cdot s^2, (G \cdot t^3) \cdot s^3...\)</span></p>
+                <p style="text-align: justify;" class="ob">Note that you can produce this set knowing only the original set and s, and the new set functions in the same way as the old set, except now using <span class="math inline">\(t \cdot s\)</span> as the "toxic waste" instead of <span class="math inline">\(t\)</span>. As long as you and the person (or people) who created the previous set do not both fail to delete your toxic waste and later collude, the set is "safe".</p>
+                <p style="text-align: justify;" class="ob">Doing this for the complete trusted setup is quite a bit harder, as there are several values involved, and the algorithm has to be done between the parties in several rounds. It's an area of active research to see if the multi-party computation algorithm can be simplified further and made to require fewer rounds or made more parallelizable, as the more you can do that the more parties it becomes feasible to include into the trusted setup procedure. It's reasonable to see why a trusted setup between six participants who all know and work with each other might make some people uncomfortable, but a trusted setup with thousands of participants would be nearly indistinguishable from no trust at all - and if you're really paranoid, you can get in and participate in the setup procedure yourself, and be sure that you personally deleted your value.</p>
+                <p style="text-align: justify;" class="ob">Another area of active research is the use of other approaches that do not use pairings and the same trusted setup paradigm to achieve the same goal; see <a href="https://www.youtube.com/watch?v=HJ9K_o-RRSY">Eli ben Sasson's recent presentation</a> for one alternative (though be warned, it's at least as mathematically complicated as SNARKs are!)</p>
+                <p style="text-align: justify;" class="ob"><em>Special thanks to Ariel Gabizon and Christian Reitwiessner for reviewing.</em></p>
+                </div>
+            </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===== Blog Single End ===== -->
+
+      <!-- ===== CTA Start ===== -->
+      <section class="i pg gh ji">
+        <!-- Bg Shape -->
+          <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
+      
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+           <div class="animate_left to/2">
+              <a class="vc ek kk hh rg ol il cm gi hi">
+                So which of the favors of your Lord would you deny?
+              </a>
+            </div>
+          </div>
+        </section>
+      
+            <!-- ===== CTA End ===== -->
+    </main>
+    <!-- ===== Footer Start ===== -->
+    <footer>
+      <div class="bb ze ki xn 2xl:ud-px-0">
+        <!-- Footer Bottom -->
+          <div class="bh ch pm tc uf sf yo wf xf ap cg fp bj">
+          <div class="animate_top">
+            <a href="/">
+              <img src="images/logo-light.png" alt="Logo" class="om" />
+              <img src="images/logo-dark.png" alt="Logo" class="xc nm" />
+            </a>
+            </div>
+    
+          <div class="animate_top">
+            <p style="text-align: justify;" class="ob">&copy; Ogiest. All rights reserved</p>
+          </div>
+        </div>
+        <!-- Footer Bottom -->
+      </div>
+    </footer>
+    
+    <!-- ===== Footer End ===== -->
+
+    <!-- ====== Back To Top Start ===== -->
+    <button
+  class="xc wf xf ie ld vg sr gh tr g sa ta _a"
+  @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+  @scroll.window="scrollTop = (window.pageYOffset > 50) ? true : false"
+  :class="{ 'uc' : scrollTop }"
+>
+  <svg class="uh se qd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+  </svg>
+</button>
+
+    <!-- ====== Back To Top End ===== -->
+  <script defer src="bundle.js"></script></body>
+</html>

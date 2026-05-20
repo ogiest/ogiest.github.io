@@ -4,11 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Judul halaman otomatis dinamis mengambil dari file post -->
     <title>{{ page.title }} | OGIest</title>
-    <!-- Tag relative_url memastikan path CSS & favicon aman saat di-deploy -->
     <link rel="icon" href="{{ 'favicon.ico' | relative_url }}">
     <link href="{{ 'style.css' | relative_url }}" rel="stylesheet">
+    
+    <!-- Sedikit tambahan style kosmetik untuk tombol Next & Previous -->
+    <style>
+      .post-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e5e7eb;
+      }
+      .nav-box {
+        max-width: 48%;
+      }
+      .nav-label {
+        font-size: 0.85rem;
+        opacity: 0.7;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .nav-title {
+        font-weight: bold;
+        display: block;
+        margin-top: 4px;
+      }
+    </style>
   </head>
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
@@ -85,11 +108,11 @@
                 <!-- Judul Utama Otomatis -->
                 <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
                 
-                <!-- Image Utama Otomatis (jika ada di front matter) -->
+                <!-- Image Utama Otomatis -->
                 {% if page.image %}
                 <center><img src="{{ page.image | relative_url }}" style="max-width:100%;" alt="{{ page.title }}" /></center>
                 <br />
-                {% endif; %}
+                {% endif %}
                 
                 <!-- Metadata Blog Otomatis -->
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
@@ -98,10 +121,35 @@
                   <li><span class="rc kk wm">Category: </span> {{ page.category | default: "Updates" }}</li>
                 </ul>
 
-                <!-- DISINILAH TEMPAT ISI TEXT MD BLOG AA AKAN MUNCUL -->
+                <!-- KONTEN BLOG MARKOVN -->
                 <div class="blog-content">
                   {{ content }}
                 </div>
+
+                <!-- DI SINI: SISTEM NAVIGASI NEXT & PREVIOUS POST -->
+                <nav class="post-navigation">
+                  
+                  <!-- Tombol Previous (Kiri) -->
+                  <div class="nav-box prev-post">
+                    {% if page.previous %}
+                      <span class="nav-label text-stone-500">← Previous Post</span>
+                      <a class="nav-title ek kk wm" href="{{ page.previous.url | relative_url }}">
+                        {{ page.previous.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                  <!-- Tombol Next (Kanan) -->
+                  <div class="nav-box next-post" style="text-align: right;">
+                    {% if page.next %}
+                      <span class="nav-label text-stone-500">Next Post →</span>
+                      <a class="nav-title ek kk wm" href="{{ page.next.url | relative_url }}">
+                        {{ page.next.title }}
+                      </a>
+                    {% endif %}
+                  </div>
+                  
+                </nav>
 
               </div>
             </div>

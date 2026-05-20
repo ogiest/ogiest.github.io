@@ -1,3 +1,4 @@
 title: OGIest
 description: OGIest Blog
 theme: minima
+permalink: /blog/:title/

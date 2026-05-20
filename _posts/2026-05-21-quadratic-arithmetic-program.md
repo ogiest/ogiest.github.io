@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Quadratic Arithmetic Programs: from Zero to Hero"
-date: 2026-01-10
+date: 2026-05-21
 author: "VB"
 image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*YD-ckgBfmmmRBCyVlhp8YQ.png"
 ---

@@ -1,3 +1,5 @@
 title: OGIest
 description: OGIest Blog
 permalink: /blog/:title/
+timezone: Asia/Jakarta
+future: true

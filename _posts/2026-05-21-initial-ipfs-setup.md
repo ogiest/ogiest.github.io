@@ -1,10 +1,9 @@
 ---
 layout: default
-title: "Kobe Steel plant that supplied"
-date: 2026-05-21
-author: "Devid Cleriya"
-category: "Events"
-image: "images/blog-big.png"
+title: "Quadratic Arithmetic Programs: from Zero to Hero"
+date: 2026-01-10
+author: "VB"
+image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*YD-ckgBfmmmRBCyVlhp8YQ.png"
 ---
 
 <p style="text-align: justify;">
@@ -12,8 +11,8 @@ image: "images/blog-big.png"
 </p>
 
 <div class="wc qf pn dg cb">
-  <center><img src="images/blog-04.png" alt="Blog" /></center>
-  <center><img src="images/blog-05.png" alt="Blog" /></center>
+  <center><img src="https://cdn-images-1.medium.com/v2/resize:fit:2000/1*YD-ckgBfmmmRBCyVlhp8YQ.png" alt="Blog" /></center>
+  <center><img src="https://cdn-images-1.medium.com/v2/resize:fit:2000/1*YD-ckgBfmmmRBCyVlhp8YQ.png" alt="Blog" /></center>
 </div>
 
 <h2 class="ek vj 2xl:ud-text-title-lg kk wm nb qb">The powerful force of humanity</h2>

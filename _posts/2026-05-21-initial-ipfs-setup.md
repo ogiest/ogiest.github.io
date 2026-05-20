@@ -1,15 +1,22 @@
 ---
 layout: default
-title: "Initial IPFS Setup for quran-web3.nft"
+title: "Kobe Steel plant that supplied"
 date: 2026-05-21
+author: "Devid Cleriya"
+category: "Events"
+image: "images/blog-big.png"
 ---
 
-## Today's Progress
-We have successfully initiated the IPFS deployment process for the quran-web3.nft project. 
+<p style="text-align: justify;">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem. Duis sed odio lorem. In a efficitur leo. Ut venenatis rhoncus quam sed condimentum.
+</p>
 
-### What we did today:
-* Configured the basic repository structure.
-* Prepared the Jekyll integration for GitHub Pages.
-* Mapped out the next steps for IPFS content addressing.
+<div class="wc qf pn dg cb">
+  <center><img src="images/blog-04.png" alt="Blog" /></center>
+  <center><img src="images/blog-05.png" alt="Blog" /></center>
+</div>
 
-*Stay tuned for the next update!*
+<h2 class="ek vj 2xl:ud-text-title-lg kk wm nb qb">The powerful force of humanity</h2>
+<p style="text-align: justify;">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis nibh lorem.
+</p>

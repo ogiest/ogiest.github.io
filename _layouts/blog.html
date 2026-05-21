@@ -128,9 +128,15 @@
                         {{ page }}
                       </a>
                     {% else %}
-                      <a class="c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an" href="{{ site.paginate_path | replace: ':num', page | relative_url | replace: '//', '/' }}">
-                        {{ page }}
-                      </a>
+                      {% if page == 1 %}
+                        <a class="c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an" href="{{ '/blog/' | relative_url }}">
+                          {{ page }}
+                        </a>
+                      {% else %}
+                        <a class="c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an" href="{{ site.paginate_path | replace: ':num', page | relative_url | replace: '//', '/' }}">
+                          {{ page }}
+                        </a>
+                      {% endif %}
                     {% endif %}
                   </li>
                 {% endfor %}
@@ -151,7 +157,7 @@
             </nav>
           </div>
           {% endif %}
-          </div>
+        </div>
       </section>
       <section class="i pg gh ji">
         <img class="h p q" src="{{ 'images/shape-16.svg' | relative_url }}" alt="Bg Shape" />

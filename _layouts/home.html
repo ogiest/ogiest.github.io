@@ -15,16 +15,16 @@
   >
     <!-- ===== Header Start ===== -->
     <header
-  class="g s r vd ya cj"
-  :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
-  @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
->
-  <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
-    <div class="vd to/4 tc wf yf">
-      <a href="/">
-        <img class="om" src="images/logo-light.png" alt="Logo Light" />
-        <img class="xc nm" src="images/logo-dark.png" alt="Logo Dark" />
-      </a>
+      class="g s r vd ya cj"
+      :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
+      @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"
+    >
+    <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
+      <div class="vd to/4 tc wf yf">
+        <a href="/">
+          <img class="om" src="images/logo-light.png" alt="Logo Light" />
+          <img class="xc nm" src="images/logo-dark.png" alt="Logo Dark" />
+        </a>
 
       <!-- Hamburger Toggle BTN -->
       <button class="po rc" @click="navigationOpen = !navigationOpen">
@@ -202,7 +202,7 @@
               </h2>
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
               <div class="tc tf yo zf mb">
-                <a href="{{ '/blog/' | relative_url }}" class="ek jk lk gh gi hi rg ml il vc _d _l"
+                <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi"
                   >View Blog</a
                 >
               </div>

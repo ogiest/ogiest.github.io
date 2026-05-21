@@ -1,0 +1,25 @@
+---
+layout: default
+title: "About Ogi Part 2"
+date: 2026-04-14
+author: "Ogi"
+category: "Events"
+image: "images/oggy-banner.jpg"
+---
+
+<p style="text-align: justify;" class="ob">
+  Welcome to my creative realm, where the fusion of art and technology transforms user experiences into captivating journeys. I am Ogi, a passionate UI/UX designer dedicated to crafting digital masterpieces that blend form and function seamlessly.
+</p>
+<p style="text-align: justify;" class="ob">
+  With an eye for detail and a commitment to user-centric design, I strive to breathe life into ideas, curating intuitive interfaces that leave a lasting impression. My mission is to bridge the gap between user needs and elegant design solutions, transforming complexity into simplicity.
+</p>
+<div class="wc qf pn dg cb">
+  <center><img src="/images/blog-04.png" alt="Blog" /></center>
+  <center><img src="/images/blog-05.png" alt="Blog" /></center>
+</div>
+<p style="text-align: justify;" class="ob">
+  Through years of experience, I have honed my skills in wireframing, prototyping, and visual design, always seeking innovation and pushing boundaries. I thrive on collaborating with cross-functional teams, fueling my belief that collective creativity leads to extraordinary outcomes.
+</p>
+<p style="text-align: justify;" class="ob">
+  Join me on this journey as we explore a diverse array of projects, each a testament to my dedication to excellence. Together, let's create meaningful interactions that inspire, engage, and leave a smile on every user's face.
+</p>

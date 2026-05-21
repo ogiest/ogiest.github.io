@@ -2,4 +2,9 @@ title: OGIest
 description: OGIest Blog
 permalink: /blog/:title/
 timezone: Asia/Jakarta
-future: true
+future: false
+plugins:
+  - jekyll-paginate
+
+paginate: 6
+paginate_path: "/blog/page:num/"

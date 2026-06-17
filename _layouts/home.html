@@ -23,7 +23,7 @@
 >
   <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
     <div class="vd to/4 tc wf yf">
-      <a href="index.html">
+      <a href="/">
         <img class="om" src="images/logo-light.svg" alt="Logo Light" />
         <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
       </a>
@@ -50,6 +50,8 @@
       <nav>
         <ul class="tc _o sf yo cg ep">
           <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+          <li><a href="/#mint" class="xl">Mint</a></li>
+          <li><a href="/#blog" class="xl">Blog</a></li>
           <li><a href="/#donate" class="xl">Donate</a></li>
           <li><a href="/about.html" class="xl">About</a></li>
         </ul>
@@ -213,8 +215,21 @@
           </div>
         </div>
       </section>
+      <section id="mint" class="pg pj vp mr oj wp nr">
+        <div
+          x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
+        >
+          <div class="animate_top bb ze rj ki xn vq">
+    <h2
+            x-text="sectionTitle"
+            class="fk vj pr kk wm on/5 gq/2 bb _b"
+    >
+    </h2>
+    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+</div>
 
-      <section class="pg pj vp mr oj wp nr">
+
+        </div>
         <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
           <div
             class="projects-tab _e bb tc uf wf xf cg rg hh rm vk xm si ti fc"
@@ -547,7 +562,7 @@
           </div>
         </div>
       </section>
-      <section class="ji gp uq">
+      <section id="blog" class="ji gp uq">
         <div
           x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
         >
@@ -754,7 +769,7 @@
     <div class="ji gp">
       <div class="tc uf ap gg fp">
         <div class="animate_top zd/2 to/4">
-          <a href="index.html">
+          <a href="/">
             <img src="images/logo-light.svg" alt="Logo" class="om" />
             <img src="images/logo-dark.svg" alt="Logo" class="xc nm" />
           </a>
@@ -834,7 +849,7 @@
             <h4 class="kk wm tj ec">Gallery</h4>
 
             <ul>
-              <li><a href="#" class="sc xl vb">Home</a></li>
+              <li><a href="/" class="sc xl vb">Home</a></li>
               <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
               <li>
                 <a href="/test/mint.html" class="sc xl vb">

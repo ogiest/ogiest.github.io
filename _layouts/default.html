@@ -112,7 +112,7 @@
                 <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
 
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
-                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
+                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Devid Cleriya" }}</li>
                   <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
                   <li><span class="rc kk wm">Category: </span> {{ page.category | default: "Updates" }}</li>
                 </ul>
@@ -124,6 +124,7 @@
                 <ul class="tc wf bg sb" style="margin-top: 40px;">
                   <li><p class="sj kk wm tb">Share On:</p></li>
                   
+                  <!-- Facebook -->
                   <li>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Facebook" class="tc wf xf yd ad rg ml il ih wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,6 +140,7 @@
                     </a>
                   </li>
 
+                  <!-- Twitter (X) -->
                   <li>
                     <a href="https://twitter.com/intent/tweet?text={{ page.title | cgi_escape }}&url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Twitter" class="tc wf xf yd ad rg ml il jh wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,6 +150,7 @@
                     </a>
                   </li>
 
+                  <!-- LinkedIn -->
                   <li>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn" class="tc wf xf yd ad rg ml il lh wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -189,38 +192,32 @@
               </div>
             </div>
 
+            <!-- ====== SIDEBAR START ====== -->
             <div class="jn/2 so">
               
-              <div class="animate_top fb" style="position: relative;">
-                <form action="#" onsubmit="return false;">
-                  <div class="i">
-                    <input
-                      id="search-input"
-                      type="text"
-                      placeholder="Search..."
-                      class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
-                      autocomplete="off"
-                    />
-
-                    <button class="h r q _h" type="button">
-                      <svg
-                        class="th ul ml il"
-                        width="21"
-                        height="21"
-                        viewBox="0 0 21 21"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M16.031 14.617L20.314 18.899L18.899 20.314L14.617 16.031C13.0237 17.3082 11.042 18.0029 9 18C4.032 18 0 13.968 0 9C0 4.032 4.032 0 9 0C13.968 0 18 4.032 18 9C18.0029 11.042 17.3082 13.0237 16.031 14.617ZM14.025 13.875C15.2941 12.5699 16.0029 10.8204 16 9C16 5.132 12.867 2 9 2C5.132 2 2 5.132 2 9C2 12.867 5.132 16 9 16C10.8204 16.0029 12.5699 15.2941 13.875 14.025L14.025 13.875Z"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <ul id="results-container" style="position: absolute; background: #555; border: 1px solid #333; width: 100%; max-height: 260px; overflow-y: auto; z-index: 999; border-radius: 8px; margin-top: 5px; padding: 10px; list-style: none; display: none;"></ul>
-                </form>
+              <!-- WIDGET RECENT POSTS (OTOMATIS 3 ARTIKEL TERBARU) -->
+              <div class="animate_top fb">
+                <h4 class="tj kk wm qb">Recent Posts</h4>
+                <div>
+                  {% for post in site.posts limit:3 %}
+                    <div class="tc fg 2xl:ud-gap-6 {% unless forloop.last %}qb{% endunless %}">
+                      {% if post.image %}
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                      {% else %}
+                        <img src="{{ 'images/blog-small-01.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                      {% endif %}
+                      <div class="ml il">
+                        <h5 class="wj kk wm xl bn">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                        <small style="opacity: 0.6; font-size: 0.75rem;" class="kk wm">{{ post.date | date: "%B %d, %Y" }}</small>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
               </div>
 
+              <!-- WIDGET CATEGORIES -->
               <div class="animate_top fb">
                 <h4 class="tj kk wm qb">Categories</h4>
                 <ul>
@@ -232,6 +229,7 @@
                 </ul>
               </div>
 
+              <!-- WIDGET RELATED POSTS -->
               <div class="animate_top">
                 <h4 class="tj kk wm qb">Related Posts</h4>
 
@@ -274,7 +272,9 @@
               </div>
               
             </div>
-            </div>
+            <!-- ====== SIDEBAR END ====== -->
+             
+          </div>
         </div>
       </section>
       
@@ -380,35 +380,6 @@
       </svg>
     </button>
     
-    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
-    <script>
-      const searchInput = document.getElementById('search-input');
-      const resultsContainer = document.getElementById('results-container');
-      
-      if(searchInput && resultsContainer) {
-        searchInput.addEventListener('input', function() {
-          if(this.value.length > 0) {
-            resultsContainer.style.display = 'block';
-          } else {
-            resultsContainer.style.display = 'none';
-          }
-        });
-
-        document.addEventListener('click', function(e) {
-          if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
-            resultsContainer.style.display = 'none';
-          }
-        });
-
-        SimpleJekyllSearch({
-          searchInput: searchInput,
-          resultsContainer: resultsContainer,
-          json: "{{ '/search.json' | relative_url }}",
-          searchResultTemplate: '<li style="padding: 8px; border-bottom: 1px solid #2d2d2d;"><a href="{url}" style="font-weight:600; font-size:0.9rem; display:block; text-decoration:none; color: #fff;">{title}</a><small style="opacity:0.5; font-size:0.75rem; color: #a1a1aa;">{date}</small></li>',
-          noResultsText: '<li style="padding: 8px; opacity:0.6; font-size:0.85rem; color: #fff;">Tidak ada hasil ditemukan</li>'
-        });
-      }
-    </script>
     <script defer src="{{ 'bundle.js' | relative_url }}"></script>
   </body>
 </html>

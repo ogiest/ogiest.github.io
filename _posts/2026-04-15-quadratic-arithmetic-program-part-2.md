@@ -2,7 +2,7 @@
 layout: default
 title: "Quadratic Arithmetic Programs: from Zero to Hero Part 2"
 date: 2026-04-15
-author: "Ogi"
+author: "Zamil"
 category: "Events"
 image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*YD-ckgBfmmmRBCyVlhp8YQ.png"
 ---

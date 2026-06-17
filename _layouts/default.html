@@ -124,7 +124,6 @@
                 <ul class="tc wf bg sb" style="margin-top: 40px;">
                   <li><p class="sj kk wm tb">Share On:</p></li>
                   
-                  <!-- Facebook -->
                   <li>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Facebook" class="tc wf xf yd ad rg ml il ih wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,23 +139,15 @@
                     </a>
                   </li>
 
-                  <!-- Twitter (X) -->
                   <li>
                     <a href="https://twitter.com/intent/tweet?text={{ page.title | cgi_escape }}&url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on Twitter" class="tc wf xf yd ad rg ml il jh wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_47_47)">
                       <path d="M18.4683 4.71327C17.8321 4.99468 17.1574 5.1795 16.4666 5.26161C17.1947 4.82613 17.7397 4.14078 17.9999 3.33327C17.3166 3.73994 16.5674 4.02494 15.7866 4.17911C15.2621 3.61792 14.5669 3.24574 13.809 3.12043C13.0512 2.99511 12.2732 3.12368 11.596 3.48615C10.9187 3.84862 10.3802 4.42468 10.0642 5.12477C9.74812 5.82486 9.67221 6.60976 9.84825 7.35744C8.46251 7.28798 7.10686 6.92788 5.86933 6.30049C4.63179 5.67311 3.54003 4.79248 2.66492 3.71577C2.35516 4.24781 2.19238 4.85263 2.19326 5.46827C2.19326 6.67661 2.80826 7.74411 3.74326 8.36911C3.18993 8.35169 2.64878 8.20226 2.16492 7.93327V7.97661C2.16509 8.78136 2.44356 9.56129 2.95313 10.1842C3.46269 10.807 4.17199 11.2345 4.96075 11.3941C4.4471 11.5333 3.90851 11.5538 3.38576 11.4541C3.60814 12.1468 4.04159 12.7526 4.62541 13.1867C5.20924 13.6208 5.9142 13.8614 6.64159 13.8749C5.91866 14.4427 5.0909 14.8624 4.20566 15.1101C3.32041 15.3577 2.39503 15.4285 1.48242 15.3183C3.0755 16.3428 4.93 16.8867 6.82409 16.8849C13.2349 16.8849 16.7408 11.5741 16.7408 6.96827C16.7408 6.81827 16.7366 6.66661 16.7299 6.51827C17.4123 6.02508 18.0013 5.41412 18.4691 4.71411L18.4683 4.71327Z" fill="white"/>
-                      </g>
-                      <defs>
-                      <clipPath id="clip0_47_47">
-                      <rect width="20" height="20" fill="white"/>
-                      </clipPath>
-                      </defs>
                       </svg>
                     </a>
                   </li>
 
-                  <!-- LinkedIn -->
                   <li>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | cgi_escape }}" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn" class="tc wf xf yd ad rg ml il lh wk">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -199,16 +190,19 @@
             </div>
 
             <div class="jn/2 so">
-              <div class="animate_top fb">
-                <form action="#">
+              
+              <div class="animate_top fb" style="position: relative;">
+                <form action="#" onsubmit="return false;">
                   <div class="i">
                     <input
+                      id="search-input"
                       type="text"
-                      placeholder="Search Here..."
+                      placeholder="Cari artikel..."
                       class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
+                      autocomplete="off"
                     />
 
-                    <button class="h r q _h">
+                    <button class="h r q _h" type="button">
                       <svg
                         class="th ul ml il"
                         width="21"
@@ -223,28 +217,18 @@
                       </svg>
                     </button>
                   </div>
+                  <ul id="results-container" style="position: absolute; background: #1a1a1a; border: 1px solid #333; width: 100%; max-height: 260px; overflow-y: auto; z-index: 999; border-radius: 8px; margin-top: 5px; padding: 10px; list-style: none; display: none;"></ul>
                 </form>
               </div>
 
               <div class="animate_top fb">
                 <h4 class="tj kk wm qb">Categories</h4>
-
                 <ul>
-                  <li class="ql vb du-ease-in-out il xl">
-                    <a href="#">Blog</a>
-                  </li>
-                  <li class="ql vb du-ease-in-out il xl">
-                    <a href="#">Events</a>
-                  </li>
-                  <li class="ql vb du-ease-in-out il xl">
-                    <a href="#">Grids</a>
-                  </li>
-                  <li class="ql vb du-ease-in-out il xl">
-                    <a href="#">News</a>
-                  </li>
-                  <li class="ql vb du-ease-in-out il xl">
-                    <a href="#">Rounded</a>
-                  </li>
+                  {% for category in site.categories %}
+                    <li class="ql vb du-ease-in-out il xl">
+                      <a href="{{ '/blog/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a>
+                    </li>
+                  {% endfor %}
                 </ul>
               </div>
 
@@ -252,30 +236,48 @@
                 <h4 class="tj kk wm qb">Related Posts</h4>
 
                 <div>
-                  <div class="tc fg 2xl:ud-gap-6 qb">
-                    <img src="{{ 'images/blog-small-01.png' | relative_url }}" alt="Blog" />
-                    <h5 class="wj kk wm xl bn ml il">
-                      <a href="#">Free advertising for your online business</a>
-                    </h5>
-                  </div>
-                  <div class="tc fg 2xl:ud-gap-6 qb">
-                    <img src="{{ 'images/blog-small-02.png' | relative_url }}" alt="Blog" />
-                    <h5 class="wj kk wm xl bn ml il">
-                      <a href="#">9 simple ways to improve your design skills</a>
-                    </h5>
-                  </div>
-                  <div class="tc fg 2xl:ud-gap-6">
-                    <img src="{{ 'images/blog-small-03.png' | relative_url }}" alt="Blog" />
-                    <h5 class="wj kk wm xl bn ml il">
-                      <a href="#">Tips to quickly improve your coding speed.</a>
-                    </h5>
-                  </div>
+                  {% assign max_related = 3 %}
+                  {% assign counter = 0 %}
+                  
+                  {% for post in site.posts %}
+                    {% if post.url != page.url and post.category == page.category %}
+                      <div class="tc fg 2xl:ud-gap-6 {% if counter < 2 %}qb{% endif %}">
+                        {% if post.image %}
+                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% else %}
+                          <img src="{{ 'images/blog-small-01.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% endif %}
+                        <h5 class="wj kk wm xl bn ml il">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                      </div>
+                      {% assign counter = counter | plus: 1 %}
+                      {% if counter == max_related %}{% break %}{% endif %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if counter == 0 %}
+                    {% for post in site.related_posts limit:max_related %}
+                      <div class="tc fg 2xl:ud-gap-6 {% unless forloop.last %}qb{% endunless %}">
+                        {% if post.image %}
+                          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% else %}
+                          <img src="{{ 'images/blog-small-01.png' | relative_url }}" alt="Blog" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" />
+                        {% endif %}
+                        <h5 class="wj kk wm xl bn ml il">
+                          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h5>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
                 </div>
               </div>
+              
             </div>
-          </div>
+            </div>
         </div>
       </section>
+      
       <section class="i pg gh ji">
         <img class="h p q" src="{{ 'images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
         
@@ -377,6 +379,39 @@
         <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
       </svg>
     </button>
+    
+    <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+    <script>
+      const searchInput = document.getElementById('search-input');
+      const resultsContainer = document.getElementById('results-container');
+      
+      if(searchInput && resultsContainer) {
+        // Dropdown muncul otomatis saat mendeteksi ketikan
+        searchInput.addEventListener('input', function() {
+          if(this.value.length > 0) {
+            resultsContainer.style.display = 'block';
+          } else {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Menutup dropdown otomatis jika klik di luar area input pencarian
+        document.addEventListener('click', function(e) {
+          if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+            resultsContainer.style.display = 'none';
+          }
+        });
+
+        // Inisialisasi engine SimpleJekyllSearch
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: resultsContainer,
+          json: "{{ '/search.json' | relative_url }}",
+          searchResultTemplate: '<li style="padding: 8px; border-bottom: 1px solid #2d2d2d;"><a href="{url}" style="font-weight:600; font-size:0.9rem; display:block; text-decoration:none; color: #fff;">{title}</a><small style="opacity:0.5; font-size:0.75rem; color: #a1a1aa;">{date}</small></li>',
+          noResultsText: '<li style="padding: 8px; opacity:0.6; font-size:0.85rem; color: #fff;">Tidak ada hasil ditemukan</li>'
+        });
+      }
+    </script>
     <script defer src="{{ 'bundle.js' | relative_url }}"></script>
   </body>
 </html>

@@ -112,7 +112,7 @@
                 <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
 
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
-                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Devid Cleriya" }}</li>
+                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
                   <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
                   <li><span class="rc kk wm">Category: </span> {{ page.category | default: "Updates" }}</li>
                 </ul>
@@ -197,7 +197,7 @@
                     <input
                       id="search-input"
                       type="text"
-                      placeholder="Cari artikel..."
+                      placeholder="Search..."
                       class="vd sm _g ch pm vk xm rg gm dm/40 dn/40 li mi"
                       autocomplete="off"
                     />
@@ -217,7 +217,7 @@
                       </svg>
                     </button>
                   </div>
-                  <ul id="results-container" style="position: absolute; background: #1a1a1a; border: 1px solid #333; width: 100%; max-height: 260px; overflow-y: auto; z-index: 999; border-radius: 8px; margin-top: 5px; padding: 10px; list-style: none; display: none;"></ul>
+                  <ul id="results-container" style="position: absolute; background: #555; border: 1px solid #333; width: 100%; max-height: 260px; overflow-y: auto; z-index: 999; border-radius: 8px; margin-top: 5px; padding: 10px; list-style: none; display: none;"></ul>
                 </form>
               </div>
 
@@ -386,7 +386,6 @@
       const resultsContainer = document.getElementById('results-container');
       
       if(searchInput && resultsContainer) {
-        // Dropdown muncul otomatis saat mendeteksi ketikan
         searchInput.addEventListener('input', function() {
           if(this.value.length > 0) {
             resultsContainer.style.display = 'block';
@@ -395,14 +394,12 @@
           }
         });
 
-        // Menutup dropdown otomatis jika klik di luar area input pencarian
         document.addEventListener('click', function(e) {
           if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
             resultsContainer.style.display = 'none';
           }
         });
 
-        // Inisialisasi engine SimpleJekyllSearch
         SimpleJekyllSearch({
           searchInput: searchInput,
           resultsContainer: resultsContainer,

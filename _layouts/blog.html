@@ -11,8 +11,8 @@
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
-         darkMode = JSON.parse(localStorage.getItem('darkMode'));
-         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
     :class="{'b eh': darkMode === true}"
   >
     <header
@@ -85,7 +85,7 @@
             {% endif %}
 
             {% for post in paginator.posts %}
-            <div class="animate_top sg vk rm xm">
+            <div class="animate_top sg vk rm xm post-card" data-categories="{% for cat in post.categories %}{{ cat | slugify }} {% endfor %}">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
 
@@ -131,7 +131,7 @@
                   </a>
                 </li>
 
-                {% for page in (1..paginator.total_pages) %}
+                {% endfor %} {% for page in (1..paginator.total_pages) %}
                   <li>
                     {% if page == paginator.page %}
                       <a class="c tc wf xf wd in zc hn rg uj fo wk xm ml il hh rm tl zm yl an" style="background: #24292e; color: #fff;">
@@ -266,5 +266,39 @@
       </svg>
     </button>
     <script defer src="{{ 'bundle.js' | relative_url }}"></script>
+
+    <script>
+      function filterBlogCategories() {
+        // 1. Dapatkan kategori dari URL hash (misal: #tech -> "tech")
+        const currentHash = window.location.hash.substring(1).toLowerCase().trim();
+        
+        // 2. Ambil semua elemen kartu postingan yang memiliki class 'post-card'
+        const postCards = document.querySelectorAll('.post-card');
+        
+        // 3. Jika tidak ada hash atau hash kosong, tampilkan semua postingan
+        if (!currentHash) {
+          postCards.forEach(card => {
+            card.style.display = ''; // mengembalikan ke display css bawaan layout
+          });
+          return;
+        }
+        
+        // 4. Jika ada hash aktif, lakukan penyaringan
+        postCards.forEach(card => {
+          const cardCategories = card.getAttribute('data-categories').trim().split(' ');
+          
+          if (cardCategories.includes(currentHash)) {
+            card.style.display = ''; // Tampilkan jika ada kecocokan kategori
+          } else {
+            card.style.display = 'none'; // Sembunyikan jika tidak cocok
+          }
+        });
+      }
+
+      // Jalankan fungsi saat halaman pertama kali dimuat
+      window.addEventListener('DOMContentLoaded', filterBlogCategories);
+      // Jalankan fungsi setiap kali URL Anchor dirubah (contoh saat klik menu sidebar)
+      window.addEventListener('hashchange', filterBlogCategories);
+    </script>
   </body>
 </html>

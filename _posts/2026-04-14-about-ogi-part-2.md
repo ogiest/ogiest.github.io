@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "About Ogi Part 2"
+title: "About Zamil Part 2"
 date: 2026-04-14
-author: "Ogi"
+author: "Zamil"
 category: "Events"
 image: "images/oggy-banner.jpg"
 ---

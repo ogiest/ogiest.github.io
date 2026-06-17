@@ -7,7 +7,6 @@
     <title>{{ page.title }} | Quran Web3</title>
     <link rel="icon" href="{{ 'favicon.png' | relative_url }}">
     <link href="{{ 'style.css' | relative_url }}" rel="stylesheet">
-
     <style>
       .post-navigation {
         display: flex;
@@ -50,7 +49,6 @@
             <img class="om" src="{{ 'images/logo-light.svg' | relative_url }}" alt="Logo Light" />
             <img class="xc nm" src="{{ 'images/logo-dark.svg' | relative_url }}" alt="Logo Dark" />
           </a>
-
           <button class="po rc" @click="navigationOpen = !navigationOpen">
             <span class="rc i pf re pd">
               <span class="du-block h q vd yc">
@@ -65,7 +63,6 @@
             </span>
           </button>
         </div>
-
         <div
           class="vd wo/4 sd qo f ho oo wf yf"
           :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
@@ -78,7 +75,6 @@
               <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
             </ul>
           </nav>
-
           <div class="tc wf ig pb no">
             <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
               <label class="rc ab i">
@@ -89,7 +85,6 @@
                 <img class="xc nm" src="{{ 'images/icon-moon.svg' | relative_url }}" alt="Moon" />
               </label>
             </div>
-
             <a href="{{ '/wp.html' | relative_url }}" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
             <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
           </div>
@@ -100,21 +95,17 @@
       <section class="gj qp gr hj rp hr">
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc sf yo zf kq">
-            
             <div class="ro">
               <div class="animate_top rounded-md shadow-solid-13 bg-white dark:bg-blacksection border border-stroke dark:border-strokedark p-7.5 md:p-10">
-                
                 {% if page.image %}
                 <center><img src="{{ page.image | relative_url }}" style="max-width:100%; border-radius: 8px;" alt="{{ page.title }}" /></center>
                 <br />
                 {% endif %}
-
                 <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
-
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
-                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Devid Cleriya" }}</li>
+                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
                   <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
-                  <li><span class="rc kk wm">Category: </span> {{ page.category | default: "Updates" }}</li>
+                  <li><span class="rc kk wm">Category: </span> {{ page.categories | join: ", " | default: page.category | default: "Updates" }}</li>
                 </ul>
 
                 <div class="blog-content">

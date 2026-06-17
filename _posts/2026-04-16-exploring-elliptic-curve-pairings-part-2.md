@@ -2,7 +2,7 @@
 layout: default
 title: "Exploring Elliptic Curve Pairings Part 2"
 date: 2026-04-16
-author: "Ogi"
+author: "Zamil"
 category: "Events"
 image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*alHa7VxwcLoJk4C_YU9Iog.png"
 ---

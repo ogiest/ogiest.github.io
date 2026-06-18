@@ -99,6 +99,27 @@
     <main>
       <section class="gj qp gr hj rp hr">
         <div class="bb ze ki xn 2xl:ud-px-0">
+
+          {% if page.categories %}
+<div style="margin-bottom: 40px; width: 100%; display: block; overflow: hidden;">
+  <ul id="breadcrumb">
+    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+    
+    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+    
+    {% for category in page.categories %}
+    <li>
+      <a href="{{ '/blog/' | append: category | append: '/' | relative_url }}" style="text-transform: capitalize;">
+        {{ category }}
+      </a>
+    </li>
+    {% endfor %}
+    
+    <li><a href="#">{{ page.title }}</a></li>
+  </ul>
+</div>
+{% endif %}
+          
           <div class="tc sf yo zf kq">
             
             <div class="ro">

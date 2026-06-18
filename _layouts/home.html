@@ -27,7 +27,6 @@
         <img class="om" src="images/logo-light.svg" alt="Logo Light" />
         <img class="xc nm" src="images/logo-dark.svg" alt="Logo Dark" />
       </a>
-
       <button class="po rc" @click="navigationOpen = !navigationOpen">
         <span class="rc i pf re pd">
           <span class="du-block h q vd yc">
@@ -42,7 +41,6 @@
         </span>
       </button>
       </div>
-
     <div
       class="vd wo/4 sd qo f ho oo wf yf"
       :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }"
@@ -55,25 +53,22 @@
           <li><a href="/#donate" class="xl">Donate</a></li>
         </ul>
       </nav>
-
       <div class="tc wf ig pb no">
         <div class="pc h io pa ra" :class="navigationOpen ? '!-ud-visible' : 'd'">
           <label class="rc ab i">
             <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode" class="pf vd yc uk h r za ab" />
-            <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
-            </svg>
-            <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
-          </label>
+               <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
+                </svg>
+                <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+              </label>
+            </div>
+            <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+            <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
+          </div>
         </div>
-
-        <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
-        <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
       </div>
-    </div>
-  </div>
-</header>
-
+    </header>
     <main>
       <section class="gj do ir hj sp jr i pg">
         <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
@@ -83,7 +78,6 @@
           <img src="images/shape-04.svg" alt="shape" class="h q r" />
           <img src="images/hero.png" alt="Quran" class="h q r ua" />
         </div>
-
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
             <div class="animate_left jn/2">
@@ -91,12 +85,10 @@
               <p class="fq">
                 The Quran Web3 Project merges the teachings of the Quran with the potential of blockchain technology. It creates a decentralized platform where users can securely access Quranic translations, interpretations, and scholarly insights.
               </p>
-
               <div class="tc tf yo zf mb">
                 <a href="/wp.html" class="ek jk lk gh gi hi rg ml il vc _d _l"
                   >Whitepaper</a
                 >
-
                 <span class="tc sf">
                   <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" class="inline-block ek xj kk wm"> Quran-Web3.NFT </a>
                   <span class="inline-block">Use Web3 Compatible Browser</span>
@@ -118,7 +110,6 @@
                 <p>Immutable records on the blockchain verify the provenance and authenticity of Quranic resources.</p>
               </div>
             </div>
-
             <div class="animate_top kn to/3 tc cg oq">
               <div class="tc wf xf cf ae cd rg nh">
                 <img src="images/icon-02.svg" alt="Icon" />
@@ -128,7 +119,6 @@
                 <p>Transcends geographical boundaries and language barriers to promote deeper understanding worldwide.</p>
               </div>
             </div>
-
             <div class="animate_top kn to/3 tc cg oq">
               <div class="tc wf xf cf ae cd rg oh">
                 <img src="images/icon-03.svg" alt="Icon" />
@@ -156,12 +146,10 @@
                 <img src="images/shape-07.svg" alt="Shape" class="bb" />
               </div>
             </div>
-
             <div class="animate_right jn/2">
               <h4 class="ek yj mk gb">The Role of Web3 Technology</h4>
               <h2 class="fk vj zp pr kk wm qb">Ushering in a new era of decentralized Quranic studies.</h2>
               <p class="uo">Web3 technology offers a solution to modern challenges by creating a decentralized, transparent, and collaborative system. Our goal is to leverage the power of blockchain and smart contracts to provide a platform that empowers users worldwide.</p>
-
               <a href="https://www.youtube.com/watch?v=xcJtL7QggTI" data-fslightbox class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
@@ -181,31 +169,26 @@
               <h4 class="ek zj kk wm nb _b">Polygon Blockchain</h4>
               <p>Leveraging the Polygon blockchain, known for its security and robust smart contract capabilities.</p>
             </div>
-
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-05.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Smart Contracts</h4>
               <p>Self-executing contracts automate processes ensuring fair rewards and efficient interactions.</p>
             </div>
-
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-06.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Data Encryption</h4>
               <p>State-of-the-art encryption protects user data and interactions from unauthorized access.</p>
             </div>
-
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-07.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Decentralized Storage</h4>
               <p>Minimizes risk of loss by ensuring materials are not stored in a single centralized location.</p>
             </div>
-
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-05.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Immutable Records</h4>
               <p>Blockchain provides an immutable and tamper-proof record of Quranic resources.</p>
             </div>
-
             <div class="animate_top sg oi pi zq ml il am cn _m">
               <img src="images/icon-06.svg" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Long-Term Preservation</h4>
@@ -217,17 +200,15 @@
       <section id="mint" class="pg pj vp mr oj wp nr">
         <div
           x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}"
-        >
-          <div class="animate_top bb ze rj ki xn vq">
-    <h2
-            x-text="sectionTitle"
-            class="fk vj pr kk wm on/5 gq/2 bb _b"
-    >
-    </h2>
-    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-</div>
-
-
+            >
+              <div class="animate_top bb ze rj ki xn vq">
+                <h2
+                        x-text="sectionTitle"
+                        class="fk vj pr kk wm on/5 gq/2 bb _b"
+                >
+                </h2>
+                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            </div>
         </div>
         <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
           <div
@@ -266,13 +247,11 @@
               Charitable Causes
             </button>
           </div>
-
           <div class="projects-wrapper tc -ud-mx-5">
             <div class="project-sizer"></div>
             <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
               <div class="c i pg sg z-1">
                 <img src="images/project-01.png" alt="Project" />
-
                 <div 
                   class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
                 >
@@ -289,11 +268,9 @@
                 </div>
               </div>
             </div>
-
             <div class="project-item wi fb vd jn/2 to/3 digital">
               <div class="c i pg sg z-1">
                 <img src="images/project-02.png" alt="Project" />
-
                 <div
                   class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
                 >
@@ -310,11 +287,9 @@
                 </div>
               </div>
             </div>
-
             <div class="project-item wi fb vd jn/2 to/3 branding ecommerce">
               <div class="c i pg sg z-1">
                 <img src="images/project-04.png" alt="Project" />
-
                 <div
                   class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
                 >
@@ -331,11 +306,9 @@
                 </div>
               </div>
             </div>
-
             <div class="project-item wi fb vd vo/3 digital ecommerce">
               <div class="c i pg sg z-1">
                 <img src="images/project-03.png" alt="Project" />
-
                 <div
                   class="h s r df nl kl im tc sf wf xf vd yc sg al hh/20 z-10"
                 >
@@ -361,13 +334,11 @@
         <img src="images/shape-09.svg" alt="Shape" class="of h y z/2" />
         <img src="images/shape-10.svg" alt="Shape" class="h _ aa" />
         <img src="images/shape-11.svg" alt="Shape" class="of h m ba" />
-
         <div class="bb ze i va ki xn xq jb jo">
           <div class="wc qf pn xo gg cp">
             <div class="animate_top rj">
               <div class="c i pg z-1">
                 <img class="vd" src="images/team-01.png" alt="Team" />
-
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -398,15 +369,12 @@
                   </div>
                 </div>
               </div>
-
               <h4 class="yj go kk wm ob zb">Olivia Andrium</h4>
               <p>Web3 Integrator</p>
             </div>
-
             <div class="animate_top rj">
               <div class="c i pg z-1">
                 <img class="vd" src="images/team-02.png" alt="Team" />
-
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -437,15 +405,12 @@
                   </div>
                 </div>
               </div>
-
               <h4 class="yj go kk wm ob zb">Jemse Kemorun</h4>
               <p>Blockchain Developer</p>
             </div>
-
             <div class="animate_top rj">
               <div class="c i pg z-1">
                 <img class="vd" src="images/team-03.png" alt="Team" />
-
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -476,14 +441,12 @@
                   </div>
                 </div>
               </div>
-
               <h4 class="yj go kk wm ob zb">Avi Pestarica</h4>
               <p>Decentralized Architect</p>
             </div>
           </div>
         </div>
       </section>
-
       <section class="hj rp hr">
         <div class="bb ze ki xn ar">
           <div class="animate_top jb cq">
@@ -493,22 +456,18 @@
                   <div class="i hh rm sg vk xm bi qj">
                     <span class="rc je md/2 gh xg h q r"></span>
                     <span class="rc je md/2 mh yg h q p"></span>
-
                     <div class="tc sf rn tn un zf dp">
                       <img class="bf" src="images/testimonial.png" alt="User" />
-
                       <div>
                         <img src="images/icon-quote.svg" alt="Quote" />
                         <p class="ek ik xj _p kc fb">
                           The Quran Web3 Project provides an unprecedented level of transparency and data integrity. It's truly a leap forward for decentralized Quranic studies.
                         </p>
-
                         <div class="tc yf vf">
                           <div>
                             <span class="rc ek xj kk wm zb">Dr. Tariq Rahman</span>
                             <span class="rc">Quranic Scholar</span>
                           </div>
-
                           <img class="rk" src="images/brand-light-02.svg" alt="Brand" />
                         </div>
                       </div>
@@ -525,7 +484,6 @@
         <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
         <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
         <img src="images/shape-15.svg" alt="Shape" class="h q p" />
-
         <div class="bb ze i va ki xn br">
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
@@ -547,44 +505,33 @@
           </div>
         </div>
       </section>
-      <!-- ===== Blog Start ===== -->
       <section id="blog" class="ji gp uq">
-        <!-- Section Title Start -->
         <div x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
           <div class="animate_top bb ze rj ki xn vq">
-            
             <h2 x-text="sectionTitle" class="fk vj pr kk wm on/5 gq/2 bb _b"></h2>
-            
             <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-            
             <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
               <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
                 View Blog
               </a>
             </div>
-
           </div>
         </div>
-        <!-- Section Title End -->
         <div class="bb ye ki xn vq jb jo">
           <div class="wc qf pn xo zf iq">
-      
             {% if site.posts.size == 0 %}
               <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
                 <p class="kk wm xl">No Post Yet</p>
               </div>
             {% endif %}
-      
             {% for post in site.posts limit:3 %}
             <div class="animate_top sg vk rm xm">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
-      
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
                   <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
                 </div>
               </div>
-      
               <div class="yh">
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
@@ -596,39 +543,32 @@
                     <p>{{ post.date | date: "%b %d" }}</p>
                   </div>
                 </div>
-                
                 <h4 class="ek tj ml il kk wm xl eq lb">
                   <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h4>
               </div>
             </div>
             {% endfor %}
-      
           </div> 
         </div>
       </section>
-      <!-- ===== Blog End ===== -->
-
       <section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
         <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
         <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
         <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="images/shape-12.svg" alt="Shape" class="h p s" />
         <img src="images/shape-13.svg" alt="Shape" class="h r q" />
-
         <div
           x-data="{ sectionTitle: `Supported Web3 Wallets`, sectionTitleText: `Connect seamlessly to the Quran Web3 platform using our recommended secure blockchain wallets.`}"
         >
           <div class="animate_top bb ze rj ki xn vq">
-    <h2
-            x-text="sectionTitle"
-            class="fk vj pr kk wm on/5 gq/2 bb _b"
-    >
-    </h2>
-    <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
-</div>
-
-
+              <h2
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h2>
+              <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+          </div>
         </div>
         <div class="tc wf xf jb og">
           <span class="ek kk wm">EVM Wallets</span>
@@ -641,13 +581,11 @@
           </button>
           <span class="ek kk wm">Mobile Wallets</span>
         </div>
-
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
             <template x-for="(plan, i) in plans" x-key="i">
               <div class="animate_top rj sg hh sm vk xm hi nj oj">
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
-
                 <div class="tc wf xf kg cc">
                   <h2
                     :class="plan.name == 'Basic' ? 'text-green-500' : ''"
@@ -656,9 +594,7 @@
                   ></h2>
                   <span x-text="billPlan == 'monthly' ? '/per month' : '/per year'" class="sc ak kk wm"></span>
                 </div>
-
                 <p class="ur dc">No connection fee required</p>
-
                 <a
                   href="#"
                   class="ek rg lk ml il gi ri"
@@ -666,13 +602,11 @@
                 >
                   Connect Wallet
                 </a>
-
                 <ul class="tc sf bg ob fb">
                   <template x-for="(feature, i) in plan.features" x-key="i">
                     <li x-text="feature"></li>
                   </template>
                 </ul>
-
                 <p class="kk wm">Instant Web3 Access</p>
               </div>
             </template>
@@ -680,27 +614,25 @@
         </div>
       </section>
       <section class="i pg gh ji">
-  <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
-
-  <div class="bb ye i z-10 ki xn dr">
-    <div class="tc uf sn tn un gg">
-      <div class="animate_left to/2">
-        <h2 class="fk vj zp pr lk ac">
-            Quran Web3
-        </h2>
-        <p class="lk">
-            By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
-        </p>
-      </div>
-      <div class="animate_right bf">
-        <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
-            Github
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
+        <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
+          <div class="bb ye i z-10 ki xn dr">
+            <div class="tc uf sn tn un gg">
+              <div class="animate_left to/2">
+                <h2 class="fk vj zp pr lk ac">
+                    Quran Web3
+                </h2>
+                <p class="lk">
+                    By embracing Web3 principles, the project aims to enhance accessibility, preservation, and knowledge sharing of the Quran.
+                </p>
+              </div>
+              <div class="animate_right bf">
+                <a href="https://github.com/quran-web3" target="_blank" class="vc ek kk hh rg ol il cm gi hi">
+                    Github
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     <footer>
       <div class="bb ze ki xn 2xl:ud-px-0">
@@ -711,15 +643,11 @@
                 <img src="{{ 'images/logo-light.svg' | relative_url }}" alt="Logo" class="om" />
                 <img src="{{ 'images/logo-dark.svg' | relative_url }}" alt="Logo" class="xc nm" />
               </a>
-
               <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
-
             </div>
-
             <div class="vd ro tc sf rn un gg vn">
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Gallery</h4>
-
                 <ul>
                   <li><a href="{{ '/' | relative_url }}" class="sc xl vb">Home</a></li>
                   <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
@@ -731,27 +659,22 @@
                   </li>
                 </ul>
               </div>
-
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Resources</h4>
-
                 <ul>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
                 </ul>
               </div>
-
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Platform</h4>
-
                 <ul>
                   <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
                   <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
                   <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
                 </ul>
               </div>
-
             </div>
           </div>
         </div>
@@ -763,7 +686,6 @@
               <li><a href="#" class="xl">Support</a></li>
             </ul>
           </div>
-
           <div class="animate_top">
             <p>&copy; 2026 Quran Web3. All rights reserved</p>
           </div>
@@ -780,15 +702,11 @@
     <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
   </svg>
 </button>
-
     <script>
-      //  Pricing Table
       const setup = () => {
         return {
           isNavOpen: false,
-
           billPlan: 'monthly',
-
           plans: [
             {
               name: 'MetaMask',

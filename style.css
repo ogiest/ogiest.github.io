@@ -373,7 +373,7 @@ Removes the default spacing and border for appropriate elements.
 #breadcrumb li a:after {
     left: 100%;
     border-color: transparent;
-    border-left-color: #3498db;
+    border-left-color: rgb(243 106 141)
   }
     
 #breadcrumb li:not(:last-child) a:hover {

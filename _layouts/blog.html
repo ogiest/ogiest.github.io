@@ -7,30 +7,6 @@
     <title>{{ page.title }} | OGIest</title>
     <link rel="icon" href="{{ 'favicon.png' | relative_url }}">
     <link href="{{ 'style.css' | relative_url }}" rel="stylesheet">
-
-    <style>
-      .post-navigation {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid #e5e7eb;
-      }
-      .nav-box {
-        max-width: 48%;
-      }
-      .nav-label {
-        font-size: 0.85rem;
-        opacity: 0.7;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-      }
-      .nav-title {
-        font-weight: bold;
-        display: block;
-        margin-top: 4px;
-      }
-    </style>
   </head>
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"

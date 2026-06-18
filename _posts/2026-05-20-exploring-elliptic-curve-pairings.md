@@ -3,7 +3,7 @@ layout: default
 title: "Exploring Elliptic Curve Pairings"
 date: 2026-05-20
 author: "Zamil"
-category: [Events, Tech]
+category: [events, updates]
 image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*alHa7VxwcLoJk4C_YU9Iog.png"
 ---
 

@@ -223,7 +223,7 @@
                 <ul>
                   {% for category in site.categories %}
                     <li class="ql vb du-ease-in-out il xl">
-                      <a href="{{ '/blog/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] | capitalize }} ({{ category[1].size }})</a>
+                      <a href="{{ '/blog/' | relative_url }}{{ category[0] | slugify }}/">{{ category[0] | capitalize }} ({{ category[1].size }})</a>
                     </li>
                   {% endfor %}
                 </ul>

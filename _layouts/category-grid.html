@@ -74,40 +74,29 @@
     </header>
     <main>
       <section class="ji gp uq">
-
         <div class="bb ye ki xn vq jb jo">
-          
-        <div style="margin-bottom: 40px; width: 100%; display: block; overflow: hidden;">
-  <ul id="breadcrumb">
-    <li><a href="{{ '/' | relative_url }}">Home</a></li>
-    <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-    <li><a href="#" style="text-transform: capitalize;">{{ page.title }}</a></li>
-  </ul>
-</div>
-        
+          <div class="animate_left to/2" style="margin-bottom: 40px; width: 100%; display: block; overflow: hidden;">
+            <ul id="breadcrumb">
+              <li><a href="{{ '/' | relative_url }}">Home</a></li>
+              <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
+              <li><a href="#" style="text-transform: capitalize;">{{ page.title }}</a></li>
+            </ul>
+          </div>
           <div class="wc qf pn xo zf iq">
-            
-            <!-- 1. Ambil postingan berdasarkan kategori secara dinamis -->
             {% assign category_posts = site.categories[page.category_slug] %}
-
-            <!-- 2. Cek jika kategori ini belum memiliki artikel -->
             {% if category_posts.size == 0 or category_posts == nil %}
               <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
                 <p class="kk wm xl">No Post Yet.</p>
               </div>
             {% endif %}
-
-            <!-- 3. Perulangan dinamis khusus untuk artikel di dalam kategori ini -->
             {% for post in category_posts %}
             <div class="animate_top sg vk rm xm">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
-
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
                   <a href="{{ post.url | relative_url }}" class="vc ek rg lk gh sl ml il gi hi">Read More</a>
                 </div>
               </div>
-
               <div class="yh">
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
@@ -125,18 +114,11 @@
               </div>
             </div>
             {% endfor %}
-
           </div>
-
-          <!-- Note: Blok Paginasi Angka (1, 2, 3) dilepas dari file ini karena GitHub Pages -->
-          <!-- hanya mendukung paginasi untuk halaman utama blog.html bawaannya saja. -->
-
         </div>
       </section>
-
       <section class="i pg gh ji">
         <img class="h p q" src="{{ 'images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
-        
           <div class="bb ye i z-10 ki xn dr">
             <div class="tc uf sn tn un gg">
               <div class="animate_left to/2">
@@ -156,7 +138,6 @@
           </div>
         </section>
       </main>
-
     <footer>
       <div class="bb ze ki xn 2xl:ud-px-0">
         <div class="ji gp">
@@ -166,15 +147,11 @@
                 <img src="{{ 'images/logo-light.svg' | relative_url }}" alt="Logo" class="om" />
                 <img src="{{ 'images/logo-dark.svg' | relative_url }}" alt="Logo" class="xc nm" />
               </a>
-
               <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
-
             </div>
-
             <div class="vd ro tc sf rn un gg vn">
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Gallery</h4>
-
                 <ul>
                   <li><a href="{{ '/' | relative_url }}" class="sc xl vb">Home</a></li>
                   <li><a href="https://polygonscan.com/token/0x74814b153519f3d77d5521cd185dd3071b6a017a" target="_blank" class="sc xl vb">605 Pages NFT</a></li>
@@ -186,27 +163,22 @@
                   </li>
                 </ul>
               </div>
-
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Resources</h4>
-
                 <ul>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/projects" target="_blank" class="sc xl vb">Progress</a></li>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/releases" target="_blank" class="sc xl vb">Releases</a></li>
                   <li><a href="https://github.com/quran-web3/quran-web3.nft/discussions" target="_blank" class="sc xl vb">Discussions</a></li>
                 </ul>
               </div>
-
               <div class="animate_top">
                 <h4 class="kk wm tj ec">Platform</h4>
-
                 <ul>
                   <li><a href="https://ud.me/quran-web3.nft" target="_blank" class="sc xl vb">Unstoppable Domains</a></li>
                   <li><a href="https://github.com/quran-web3" target="_blank" class="sc xl vb">Github</a></li>
                   <li><a href="https://twitter.com/quran_web3" target="_blank" class="sc xl vb">Twitter (X)</a></li>
                 </ul>
               </div>
-
             </div>
           </div>
         </div>
@@ -218,7 +190,6 @@
               <li><a href="#" class="xl">Support</a></li>
             </ul>
           </div>
-
           <div class="animate_top">
             <p>&copy; 2026 Quran Web3. All rights reserved</p>
           </div>
@@ -235,7 +206,6 @@
         <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
       </svg>
     </button>
-    
     <script defer src="{{ 'bundle.js' | relative_url }}"></script>
   </body>
 </html>

@@ -112,9 +112,9 @@
                 <h1 style="text-align: center;" class="ek vj 2xl:ud-text-title-lg kk wm nb gb">{{ page.title }}</h1><br />
 
                 <ul class="tc uf cg 2xl:ud-gap-15 fb">
-                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Devid Cleriya" }}</li>
+                  <li><span class="rc kk wm">Author: </span> {{ page.author | default: "Zamil" }}</li>
                   <li><span class="rc kk wm">Published On: </span> {{ page.date | date: "%B %d, %Y" }}</li>
-                  <li><span class="rc kk wm">Category: </span> {{ page.category | default: "Updates" }}</li>
+                  <li><span class="rc kk wm">Category: </span> {{ page.categories | join: ", " | default: "Updates" }}</li>
                 </ul>
 
                 <div class="blog-content">

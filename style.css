@@ -323,12 +323,10 @@ Removes the default spacing and border for appropriate elements.
 #breadcrumb li:nth-child(even) a {
   background-color: #2980b9;
 }
-
 #breadcrumb li:nth-child(even) a:before {
   border-color: #2980b9;
   border-left-color: transparent;
 }
-
 #breadcrumb li:nth-child(even) a:after {
   border-left-color: #2980b9;
 }
@@ -337,7 +335,6 @@ Removes the default spacing and border for appropriate elements.
   padding-left: 15px;
   border-radius: 4px 0 0 4px;
 }
-
 #breadcrumb li:first-child a:before {
   border: none;
 }
@@ -349,11 +346,9 @@ Removes the default spacing and border for appropriate elements.
   color: #334155;
   pointer-events: none;
 }
-
 #breadcrumb li:last-child a:after {
   border: none;
 }
-
 #breadcrumb li:last-child a:before {
   border-color: #e2e8f0;
   border-left-color: transparent;
@@ -382,16 +377,16 @@ Removes the default spacing and border for appropriate elements.
 }
 
 #breadcrumb li:not(:last-child) a:hover {
-  background-color: #1abc9c;
+  background-color: rgb(243 106 141);
 }
 
 #breadcrumb li:not(:last-child) a:hover:before {
-  border-color: #1abc9c;
+  border-color: rgb(243 106 141);
   border-left-color: transparent;
 }
 
 #breadcrumb li:not(:last-child) a:hover:after {
-  border-left-color: #1abc9c;
+  border-left-color: rgb(243 106 141);
 }
 
 blockquote,

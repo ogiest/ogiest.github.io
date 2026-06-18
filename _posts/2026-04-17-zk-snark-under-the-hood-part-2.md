@@ -3,7 +3,7 @@ layout: default
 title: "Zk-SNARKs: Under the Hood Part 2"
 date: 2026-04-17
 author: "Zamil"
-categories: [updates, events, tech]
+categories: [updates, events]
 image: "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*gOI0njM1tPSvmvZuIUe0MA.png"
 ---
 

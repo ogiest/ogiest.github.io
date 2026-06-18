@@ -297,95 +297,102 @@ Removes the default spacing and border for appropriate elements.
 */
 
 #breadcrumb {
-    list-style: none;
-    display: inline-block;
-  }
-    
+  list-style: none;
+  display: inline-block;
+}
+
 #breadcrumb li {
-    float: left;
-  }
-    
+  float: left;
+}
+
 #breadcrumb li a {
-    color: #FFF;
-    display: block;
-    background: #3498db;
-    text-decoration: none;
-    position: relative;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 10px 0 5px;
-    text-align: center;
-    margin-right: 23px;
-    font-size: 13px;
-    font-weight: 500;
-  }
-    
+  color: #FFF;
+  display: block;
+  background: #3498db;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 #breadcrumb li:nth-child(even) a {
-    background-color: #2980b9;
-  }
+  background-color: #2980b9;
+}
+
 #breadcrumb li:nth-child(even) a:before {
-    border-color: #2980b9;
-    border-left-color: transparent;
-  }
+  border-color: #2980b9;
+  border-left-color: transparent;
+}
+
 #breadcrumb li:nth-child(even) a:after {
-    border-left-color: #2980b9;
-  }
-    
+  border-left-color: #2980b9;
+}
+
 #breadcrumb li:first-child a {
-    padding-left: 15px;
-    border-radius: 4px 0 0 4px;
-  }
+  padding-left: 15px;
+  border-radius: 4px 0 0 4px;
+}
+
 #breadcrumb li:first-child a:before {
-    border: none;
-  }
-    
+  border: none;
+}
+
 #breadcrumb li:last-child a {
-    padding-right: 15px;
-    border-radius: 0 4px 4px 0;
-    background-color: #e2e8f0;
-    color: #334155;
-    pointer-events: none;
-  }
+  padding-right: 15px;
+  border-radius: 0 4px 4px 0;
+  background-color: #e2e8f0;
+  color: #334155;
+  pointer-events: none;
+}
+
 #breadcrumb li:last-child a:after {
-    border: none;
-  }
+  border: none;
+}
+
 #breadcrumb li:last-child a:before {
-    border-color: #e2e8f0;
-    border-left-color: transparent;
-  }
-    
+  border-color: #e2e8f0;
+  border-left-color: transparent;
+}
+
 #breadcrumb li a:before,
 #breadcrumb li a:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    border: 0 solid #3498db;
-    border-width: 20px 10px;
-    width: 0;
-    height: 0;
-  }
-   
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 0 solid #3498db;
+  border-width: 20px 10px;
+  width: 0;
+  height: 0;
+}
+
 #breadcrumb li a:before {
-    left: -20px;
-    border-left-color: transparent;
-  }
-    
+  left: -20px;
+  border-left-color: transparent;
+}
+
 #breadcrumb li a:after {
-    left: 100%;
-    border-color: transparent;
-    border-left-color: rgb(243 106 141)
-  }
-    
+  left: 100%;
+  border-color: transparent;
+  border-left-color: #3498db;
+}
+
 #breadcrumb li:not(:last-child) a:hover {
-    background-color: rgb(243 106 141)
-  }
+  background-color: #1abc9c;
+}
+
 #breadcrumb li:not(:last-child) a:hover:before {
-    border-color: rgb(243 106 141)
-    border-left-color: transparent;
-  }
+  border-color: #1abc9c;
+  border-left-color: transparent;
+}
+
 #breadcrumb li:not(:last-child) a:hover:after {
-    border-left-color: rgb(243 106 141)
-  }
+  border-left-color: #1abc9c;
+}
 
 blockquote,
 dl,

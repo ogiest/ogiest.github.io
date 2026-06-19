@@ -150,12 +150,12 @@
               <h4 class="ek yj mk gb">The Role of Web3 Technology</h4>
               <h2 class="fk vj zp pr kk wm qb">Ushering in a new era of decentralized Quranic studies.</h2>
               <p class="uo">Web3 technology offers a solution to modern challenges by creating a decentralized, transparent, and collaborative system. Our goal is to leverage the power of blockchain and smart contracts to provide a platform that empowers users worldwide.</p>
-              <a href="images/whitepaper.pdf" data-fslightbox="gallery" data-type="iframe" class="vc wf hg mb">
+              <a href="javascript:void(0);" onclick="openPdfModal()" class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
                   <img src="images/icon-play.svg" alt="Play" />
                 </span>
-                <span class="kk">EXPLORE THE PLATFORM</span>
+                <span class="ek yj mk gb">EXPLORE THE PLATFORM</span>
               </a>
             </div>
           </div>
@@ -702,6 +702,39 @@
     <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
   </svg>
 </button>
+    <div id="customPdfModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 99999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+  <div style="position: relative; width: 90%; max-width: 1100px; height: 85vh; background: #111; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+    
+    <button onclick="closePdfModal()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; z-index: 100000; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">✕</button>
+    
+    <iframe src="images/whitepaper.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+</div>
+
+<script>
+  function openPdfModal() {
+    const modal = document.getElementById('customPdfModal');
+    modal.style.display = 'flex';
+    // Trigger animasi fade-in halus
+    setTimeout(() => { modal.style.opacity = '1'; }, 10);
+    document.body.style.overflow = 'hidden'; // Mengunci scroll background
+  }
+
+  function closePdfModal() {
+    const modal = document.getElementById('customPdfModal');
+    modal.style.opacity = '0';
+    // Tunggu animasi selesai baru sembunyikan display
+    setTimeout(() => { modal.style.display = 'none'; }, 300);
+    document.body.style.overflow = 'auto'; // Mengaktifkan scroll kembali
+  }
+  
+  // Menutup modal jika user mengklik area luar modal (backdrop)
+  document.getElementById('customPdfModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closePdfModal();
+    }
+  });
+</script>
     <script>
       const setup = () => {
         return {

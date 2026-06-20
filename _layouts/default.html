@@ -31,22 +31,21 @@
       }
     </style>
   </head>
-  <body
+<body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
          $watch('darkMode', value => {
            localStorage.setItem('darkMode', JSON.stringify(value));
-           <!-- Sinyal otomatis ke Giscus saat tombol dark mode di-klik -->
-           const theme = value ? 'github_dark' : 'github_light';
+           const giscusTheme = value ? 'github_dark' : 'github_light';
            const iframe = document.querySelector('iframe.giscus-frame');
            if (iframe) {
-             iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
+             iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
            }
          })"
     :class="{'b eh': darkMode === true}"
   >
-    <header
+  <header
       class="g s r vd ya cj"
       :class="{ 'hh sm _k dj bl ll' : stickyMenu }"
       @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false"

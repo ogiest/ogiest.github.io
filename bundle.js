@@ -1471,6 +1471,20 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	})();
 /******/ 	
 /************************************************************************/
+
+function updateGiscusTheme() {
+  const isDark = document.documentElement.classList.contains('dark'); 
+  const currentTheme = isDark ? 'github_dark' : 'github_light';
+  const iframe = document.querySelector('iframe.giscus-frame');
+  if (iframe) {
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: currentTheme } } },
+      'https://giscus.app'
+    );
+  }
+}
+
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports

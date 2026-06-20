@@ -34,8 +34,16 @@
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
-         darkMode = JSON.parse(localStorage.getItem('darkMode'));
-         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+         darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
+         $watch('darkMode', value => {
+           localStorage.setItem('darkMode', JSON.stringify(value));
+           <!-- Sinyal otomatis ke Giscus saat tombol dark mode di-klik -->
+           const theme = value ? 'github_dark' : 'github_light';
+           const iframe = document.querySelector('iframe.giscus-frame');
+           if (iframe) {
+             iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
+           }
+         })"
     :class="{'b eh': darkMode === true}"
   >
     <header
@@ -243,7 +251,7 @@
                 <div>
                   {% assign max_related = 3 %}
                   {% assign counter = 0 %}
-                  {% for post in site.posts %}
+                  {% autumn for post in site.posts %}
                     {% if post.url != page.url and post.category == page.category %}
                       <div class="tc fg 2xl:ud-gap-6 {% if counter < 2 %}qb{% endif %}">
                         {% if post.image %}
@@ -369,11 +377,5 @@
       </svg>
     </button>
     <script defer src="{{ 'bundle.js' | relative_url }}"></script>
-    <script>
-      tombolTheme.addEventListener('click', () => {
-             document.documentElement.classList.toggle('dark');
-             updateGiscusTheme(); 
-      });
-    </script>
   </body>
 </html>

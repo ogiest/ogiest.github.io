@@ -34,7 +34,7 @@
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
-      darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
+      darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
       $watch('darkMode', value => {
         localStorage.setItem('darkMode', JSON.stringify(value));
         const theme = value ? 'cobalt' : 'light_tritanopia';
@@ -196,7 +196,7 @@
               <div id="giscus-container" style="margin-top: 30px;"></div>
               <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                  const isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
+                  const isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
                   const initialTheme = isDarkMode ? 'cobalt' : 'light_tritanopia';
                   const script = document.createElement('script');
                   

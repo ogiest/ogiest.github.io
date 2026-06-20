@@ -184,22 +184,28 @@
                   </div>
                 </nav>
               </div>
-            <script src="https://giscus.app/client.js"
-                    data-repo="ogiest/ogiest.github.io"
-                    data-repo-id="R_kgDOKBNchg"
-                    data-category="General"
-                    data-category-id="DIC_kwDOKBNchs4C_gVd"
-                    data-mapping="specific"
-                    data-term="{{ page.title }}" 
-                    data-strict="0"
-                    data-reactions-enabled="1"
-                    data-emit-metadata="0"
-                    data-input-position="bottom"
-                    data-theme="preferred_color_scheme"
-                    data-lang="en"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+              <div id="giscus-container" style="margin-top: 30px;"></div>
+              <script>
+                const isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
+                const initialTheme = isDarkMode ? 'github_dark' : 'github_light';
+                const script = document.createElement('script');
+                script.src = "https://giscus.app/client.js";
+                script.setAttribute('data-repo', "ogiest/ogiest.github.io");
+                script.setAttribute('data-repo-id', "R_kgDOKBNchg");
+                script.setAttribute('data-category', "General");
+                script.setAttribute('data-category-id', "DIC_kwDOKBNchs4C_gVd");
+                script.setAttribute('data-mapping', "specific");
+                script.setAttribute('data-term', "{{ page.title }}"); 
+                script.setAttribute('data-strict', "0");
+                script.setAttribute('data-reactions-enabled', "1");
+                script.setAttribute('data-emit-metadata', "0");
+                script.setAttribute('data-input-position', "bottom");
+                script.setAttribute('data-theme', initialTheme);
+                script.setAttribute('data-lang', "en");
+                script.setAttribute('crossorigin', "anonymous");
+                script.async = true;
+                document.getElementById('giscus-container').appendChild(script);
+              </script>
             </div>
             <div class="jn/2 so">
               <div class="animate_top fb i hh rm sg vk xm bi qj">

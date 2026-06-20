@@ -33,16 +33,15 @@
   </head>
   <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
-    x-init="
-         darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
-         $watch('darkMode', value => {
-           localStorage.setItem('darkMode', JSON.stringify(value));
-           const giscusTheme = value ? 'github_dark' : 'github_light';
-           const iframe = document.querySelector('iframe.giscus-frame');
-           if (iframe) {
-             iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
-           }
-         })"
+    x-init="darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;"
+    x-effect="
+      localStorage.setItem('darkMode', JSON.stringify(darkMode));
+      const giscusTheme = darkMode ? 'github_dark' : 'github_light';
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: giscusTheme } } }, 'https://giscus.app');
+      }
+    "
     :class="{'b eh': darkMode === true}"
   >
   <header

@@ -31,7 +31,7 @@
       }
     </style>
   </head>
-<body
+  <body
     x-data="{ page: 'blog-single', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
          darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : true;
@@ -250,7 +250,7 @@
                 <div>
                   {% assign max_related = 3 %}
                   {% assign counter = 0 %}
-                  {% autumn for post in site.posts %}
+                  {% for post in site.posts %}
                     {% if post.url != page.url and post.category == page.category %}
                       <div class="tc fg 2xl:ud-gap-6 {% if counter < 2 %}qb{% endif %}">
                         {% if post.image %}

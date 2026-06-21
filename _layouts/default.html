@@ -37,7 +37,7 @@
       darkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
       $watch('darkMode', value => {
         localStorage.setItem('darkMode', JSON.stringify(value));
-        const theme = value ? 'cobalt' : 'light_tritanopia';
+        const theme = value ? 'dark_tritanopia' : 'light_tritanopia';
         const iframe = document.querySelector('iframe.giscus-frame');
         if (iframe && iframe.contentWindow) {
           iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: theme } } }, 'https://giscus.app');
@@ -196,7 +196,7 @@
               <script>
                 document.addEventListener('DOMContentLoaded', function () {
                   const isDarkMode = localStorage.getItem('darkMode') !== null ? JSON.parse(localStorage.getItem('darkMode')) : false;
-                  const initialTheme = isDarkMode ? 'cobalt' : 'light_tritanopia';
+                  const initialTheme = isDarkMode ? 'dark_tritanopia' : 'light_tritanopia';
                   const script = document.createElement('script');
                   script.src = "https://giscus.app/client.js";
                   script.setAttribute('data-repo', "quran-web3/quran-web3.github.io");

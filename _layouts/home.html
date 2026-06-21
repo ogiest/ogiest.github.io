@@ -438,6 +438,22 @@
           </div>
         </div>
       </section>
+        <div
+          x-data="{ sectionTitle: `Updates & Info`}"
+        >
+            <div class="animate_top bb ze rj ki xn vq">
+              <h4
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h4>
+            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
+              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
+                View Blog
+              </a>
+            </div>
+          </div>
+        </div>
       <section class="i pg qh rm ji hp">
         <img src="images/shape-11.svg" alt="Shape" class="of h ga ha ke" />
         <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
@@ -465,22 +481,6 @@
         </div>
       </section>
       <section id="blog" class="ji gp uq">
-        <div
-          x-data="{ sectionTitle: `Updates & Info`}"
-        >
-            <div class="animate_top bb ze rj ki xn vq">
-              <h4
-                      x-text="sectionTitle"
-                      class="fk vj pr kk wm on/5 gq/2 bb _b"
-              >
-              </h4>
-            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
-              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
-                View Blog
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="bb ye ki xn vq jb jo">
           <div class="wc qf pn xo zf iq">
             {% if site.posts.size == 0 %}

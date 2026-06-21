@@ -443,22 +443,6 @@
         <img src="images/shape-07.svg" alt="Shape" class="h ia o ae jf" />
         <img src="images/shape-14.svg" alt="Shape" class="h ja ka" />
         <img src="images/shape-15.svg" alt="Shape" class="h q p" />
-        <div
-          x-data="{ sectionTitle: `Updates & Info`}"
-        >
-            <div class="animate_top bb ze rj ki xn vq">
-              <h4
-                      x-text="sectionTitle"
-                      class="fk vj pr kk wm on/5 gq/2 bb _b"
-              >
-              </h4>
-            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
-              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
-                View Blog
-              </a>
-            </div>
-          </div>
-        </div>
         <div class="bb ze i va ki xn br">
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">
@@ -481,6 +465,22 @@
         </div>
       </section>
       <section id="blog" class="ji gp uq">
+        <div
+          x-data="{ sectionTitle: `Updates & Info`}"
+        >
+            <div class="animate_top bb ze rj ki xn vq">
+              <h4
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h4>
+            <div class="tc wf xf bg" style="margin-top: 30px; width: 100%;">
+              <a href="{{ '/blog/' | relative_url }}" class="vc ek rg lk gh sl ml il gi hi" style="display: inline-block; padding: 12px 35px;">
+                View Blog
+              </a>
+            </div>
+          </div>
+        </div>
         <div class="bb ye ki xn vq jb jo">
           <div class="wc qf pn xo zf iq">
             {% if site.posts.size == 0 %}

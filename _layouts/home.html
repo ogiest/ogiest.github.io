@@ -167,7 +167,18 @@
         <img src="images/shape-09.svg" alt="Shape" class="of h y z/2" />
         <img src="images/shape-10.svg" alt="Shape" class="h _ aa" />
         <img src="images/shape-11.svg" alt="Shape" class="of h m ba" />
-        <div class="bb ze i va ki xn xq jb jo">
+        <div
+          x-data="{ sectionTitle: `Platforms`}"
+        >
+            <div class="animate_top bb ze rj ki xn vq">
+              <h4
+                      x-text="sectionTitle"
+                      class="fk vj pr kk wm on/5 gq/2 bb _b"
+              >
+              </h4>
+            </div>
+          </div>
+          <div class="bb ze i va ki xn xq jb jo">
           <div class="wc qf pn xo gg cp">
             <div class="animate_top rj">
               <div class="c i pg z-1">
@@ -453,38 +464,6 @@
           </div>
         </div>
       </section>
-      <section class="hj rp hr">
-        <div class="bb ze ki xn ar">
-          <div class="animate_top jb cq sg vk rm xm">
-            <div class="swiper testimonial-01">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
-                    <div class="tc sf rn tn un zf dp">
-                      <img class="bf" src="images/testimonial.png" alt="User" />
-                      <div>
-                        <img src="images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">
-                          The Quran Web3 Project provides an unprecedented level of transparency and data integrity. It's truly a leap forward for decentralized Quranic studies.
-                        </p>
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb">Dr. Tariq Rahman</span>
-                            <span class="rc">Quranic Scholar</span>
-                          </div>
-                          <img class="rk" src="images/brand-light-02.svg" alt="Brand" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section id="blog" class="ji gp uq">
         <div x-data="{ sectionTitle: `Latest Blogs & News`, sectionTitleText: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.`}">
           <div class="animate_top bb ze rj ki xn vq">
@@ -530,6 +509,38 @@
             </div>
             {% endfor %}
           </div> 
+        </div>
+      </section>
+      <section class="hj rp hr">
+        <div class="bb ze ki xn ar">
+          <div class="animate_top jb cq sg vk rm xm">
+            <div class="swiper testimonial-01">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="i hh rm sg vk xm bi qj">
+                    <span class="rc je md/2 gh xg h q r"></span>
+                    <span class="rc je md/2 mh yg h q p"></span>
+                    <div class="tc sf rn tn un zf dp">
+                      <img class="bf" src="images/testimonial.png" alt="User" />
+                      <div>
+                        <img src="images/icon-quote.svg" alt="Quote" />
+                        <p class="ek ik xj _p kc fb">
+                          The Quran Web3 Project provides an unprecedented level of transparency and data integrity. It's truly a leap forward for decentralized Quranic studies.
+                        </p>
+                        <div class="tc yf vf">
+                          <div>
+                            <span class="rc ek xj kk wm zb">Dr. Tariq Rahman</span>
+                            <span class="rc">Quranic Scholar</span>
+                          </div>
+                          <img class="rk" src="images/brand-light-02.svg" alt="Brand" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">

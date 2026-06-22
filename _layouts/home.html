@@ -463,14 +463,14 @@
           </div>
         </div>
       </section>
-<section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
+      <section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
         <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
         <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
         <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="images/shape-12.svg" alt="Shape" class="h p s" />
         <img src="images/shape-13.svg" alt="Shape" class="h r q" />
         <div
-          x-data="{ sectionTitle: `Dukung Proyek Kami`, sectionTitleText: `Pilih aset kripto pilihan Anda untuk menyalin alamat dompet atau memindai QR Code.`}"
+          x-data="{ sectionTitle: `Support Our Project`, sectionTitleText: `Choose your preferred crypto asset to copy the wallet address or scan the QR Code.`}"
         >
           <div class="animate_top bb ze rj ki xn vq">
               <h2
@@ -482,8 +482,9 @@
           </div>
         </div>
         
+        <!-- Toggle Switch -->
         <div class="tc wf xf jb og">
-          <span class="ek kk wm">Grup 1 (BTC, XMR, DOGE)</span>
+          <span class="ek kk wm">Group 1 (BTC, XMR, DOGE)</span>
           <button class="i rg gm" x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
             <div class="fe id bl gh rg xk outline-none"></div>
             <div
@@ -491,21 +492,26 @@
               :class="{ 'ff': billPlan == 'monthly', 'gf': billPlan == 'annually' }"
             ></div>
           </button>
-          <span class="ek kk wm">Grup 2 (ETH, SOL, TRX)</span>
+          <span class="ek kk wm">Group 2 (ETH, SOL, TRX)</span>
         </div>
 
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
+            <!-- Looping Cards dengan AlpineJS -->
             <template x-for="(plan, i) in plans" x-key="i">
               <div x-show="plan.type === billPlan" class="animate_top rj sg hh sm vk xm hi nj oj" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
                 
+                <!-- Title Kripto -->
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
                 
+                <!-- QR Code (Path disesuaikan untuk Jekyll) -->
                 <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #D8E1ED;" />
                 
+                <!-- Textarea Alamat Dompet -->
                 <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; width: 100%; outline: none; word-break: break-all;"></textarea>
                 
-                <button @click="navigator.clipboard.writeText(plan.address); alert('Alamat ' + plan.name + ' berhasil disalin!')" class="ek rg lk ml il gi ri gh sl" style="width: 100%; margin-top: auto;">
+                <!-- Button Copy dengan Notifikasi Bahasa Inggris -->
+                <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="ek rg lk ml il gi ri gh sl" style="width: 100%; margin-top: auto;">
                   Copy Address
                 </button>
                 
@@ -628,53 +634,54 @@
         }
       });
 
-      const setup = () => {
+const setup = () => {
         return {
           isNavOpen: false,
-          billPlan: 'monthly', // Default ke Grup 1
+          billPlan: 'monthly', // Default ke Group 1
           plans: [
-            // --- GRUP 1 (Toggle Default / "monthly") ---
+            // --- GROUP 1 (Toggle Default / "monthly") ---
             {
               name: 'Bitcoin (BTC)',
               type: 'monthly',
-              qr: 'images/qr-btc.png',
-              address: 'Alamat_BTC_Aa_Disini'
+              qr: '{{ "/images/qr-btc.png" | relative_url }}',
+              address: 'Your_BTC_Address_Here'
             },
             {
               name: 'Monero (XMR)',
               type: 'monthly',
-              qr: 'images/qr-xmr.png',
-              address: 'Alamat_XMR_Aa_Disini'
+              qr: '{{ "/images/qr-xmr.png" | relative_url }}',
+              address: 'Your_XMR_Address_Here'
             },
             {
               name: 'Dogecoin (DOGE)',
               type: 'monthly',
-              qr: 'images/qr-doge.png',
-              address: 'Alamat_DOGE_Aa_Disini'
+              qr: '{{ "/images/qr-doge.png" | relative_url }}',
+              address: 'Your_DOGE_Address_Here'
             },
             
-            // --- GRUP 2 (Toggle Kedua / "annually") ---
+            // --- GROUP 2 (Toggle Kedua / "annually") ---
             {
               name: 'Ethereum (ETH)',
               type: 'annually',
-              qr: 'images/qr-eth.png',
-              address: 'Alamat_ETH_Aa_Disini'
+              qr: '{{ "/images/qr-eth.png" | relative_url }}',
+              address: 'Your_ETH_Address_Here'
             },
             {
               name: 'Solana (SOL)',
               type: 'annually',
-              qr: 'images/qr-sol.png',
-              address: 'Alamat_SOL_Aa_Disini'
+              qr: '{{ "/images/qr-sol.png" | relative_url }}',
+              address: 'Your_SOL_Address_Here'
             },
             {
               name: 'Tron (TRX)',
               type: 'annually',
-              qr: 'images/qr-trx.png',
-              address: 'Alamat_TRX_Aa_Disini'
+              qr: '{{ "/images/qr-trx.png" | relative_url }}',
+              address: 'Your_TRX_Address_Here'
             }
           ],
         };
       };
     </script>
-  <script defer src="bundle.js"></script></body>
+    <script defer src="bundle.js"></script>
+  </body>
 </html>

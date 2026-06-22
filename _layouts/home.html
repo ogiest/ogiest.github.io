@@ -468,28 +468,7 @@
           <div class="animate_top jb cq sg vk rm xm">
             <div class="swiper testimonial-01">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="i hh rm sg vk xm bi qj">
-                    <span class="rc je md/2 gh xg h q r"></span>
-                    <span class="rc je md/2 mh yg h q p"></span>
-                    <div class="tc sf rn tn un zf dp">
-                      <img class="bf" src="images/testimonial.png" alt="User" />
-                      <div>
-                        <img src="images/icon-quote.svg" alt="Quote" />
-                        <p class="ek ik xj _p kc fb">
-                          The Quran Web3 Project provides an unprecedented level of transparency and data integrity. It's truly a leap forward for decentralized Quranic studies.
-                        </p>
-                        <div class="tc yf vf">
-                          <div>
-                            <span class="rc ek xj kk wm zb">Zamil Hasballah</span>
-                            <span class="rc">Quranic Scholar</span>
-                          </div>
-                          <img class="rk" src="images/brand.png" alt="Brand" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div class="swiper-slide">
                   <div class="i hh rm sg vk xm bi qj">
                     <span class="rc je md/2 gh xg h q r"></span>
@@ -697,25 +676,36 @@
               <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
           </div>
         </div>
-        <div class="tc wf xf jb og">
-          <span class="ek kk wm">Crypto Currency</span>
-          <button class="i rg gm" x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
+        
+        <div class="tc wf xf jb bg uf">
+          <span class="ek kk wm ak">Group 1 (BTC, XMR, DOGE)</span>
+          <button class="i rg gm bf" x-cloak @click="billPlan = (billPlan === 'monthly' ? 'annually' : 'monthly')">
             <div class="fe id bl gh rg xk outline-none"></div>
             <div
               class="h vc wf xf ge jd cl jl ml mf hh rg yk ea fa"
-              :class="{ 'ff': billPlan == 'monthly', 'gf': billPlan == 'annually' }"
+              :class="{ 'ff': billPlan === 'monthly', 'gf': billPlan === 'annually' }"
             ></div>
           </button>
-          <span class="ek kk wm">USDt Compatible</span>
+          <span class="ek kk wm ak">Group 2 (ETH, SOL, TRX)</span>
         </div>
+
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
             <template x-for="(plan, i) in plans" x-key="i">
-              <div x-show="plan.type === billPlan" class="animate_top rj sg hh sm vk xm hi nj oj" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+              
+              <div 
+                x-show="plan.type === billPlan" 
+                x-transition
+                class="tc sf wf yf rj sg hh sm vk xm hi nj oj"
+              >
+                
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
+                
                 <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #D8E1ED;" />
-                <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; width: 100%; outline: none; word-break: break-all;"></textarea>
-                <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="ek rg lk ml il gi ri gh sl" style="width: 100%; margin-top: auto;">
+                
+                <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
+                
+                <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
                   Copy Address
                 </button>
               </div>

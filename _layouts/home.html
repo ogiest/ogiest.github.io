@@ -261,13 +261,17 @@
       <section id="mint" class="pg pj vp mr oj wp nr">
         <div class="bb ze ki xn 2xl:ud-px-0 jb" x-data="{filterTab: 1}">
           
-          <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
-            <h2 class="fk vj pr kk wm on/5 gq/2 bb _b">
-              Quran-Web3 NFT Collection
-            </h2>
-            <p class="bb on/5 wo/5 hq" style="margin-left: auto; margin-right: auto;">
-              Explore the complete 114 Surahs, enriched with 9 translations and precise Tajweed rules. Set to be deployed on the <strong>Polygon</strong> network, this collection represents a new era of decentralized Quranic preservation. Minting status: <span style="font-weight: 600; color: #F36A8D;">Coming Soon</span>.
-            </p>
+          <div
+            x-data="{ sectionTitle: `Quran-Web3 NFT Collection`, sectionTitleText: `Explore the complete 114 Surahs, enriched with 9 translations and precise Tajweed rules. Set to be deployed on the Polygon network, this collection represents a new era of decentralized Quranic preservation. Minting status: Coming Soon.`}"
+          >
+            <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
+                <h2
+                        x-text="sectionTitle"
+                        class="fk vj pr kk wm on/5 gq/2 bb _b"
+                >
+                </h2>
+                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            </div>
           </div>
 
           <div

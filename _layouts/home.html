@@ -463,14 +463,14 @@
           </div>
         </div>
       </section>
-      <section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
+<section id="donate" x-data="setup()" class="i pg fh rm ji gp uq">
         <img src="images/shape-06.svg" alt="Shape" class="h aa y" />
         <img src="images/shape-03.svg" alt="Shape" class="h ca u" />
         <img src="images/shape-07.svg" alt="Shape" class="h w da ee" />
         <img src="images/shape-12.svg" alt="Shape" class="h p s" />
         <img src="images/shape-13.svg" alt="Shape" class="h r q" />
         <div
-          x-data="{ sectionTitle: `Supported Web3 Wallets`, sectionTitleText: `Connect seamlessly to the Quran Web3 platform using our recommended secure blockchain wallets.`}"
+          x-data="{ sectionTitle: `Dukung Proyek Kami`, sectionTitleText: `Pilih aset kripto pilihan Anda untuk menyalin alamat dompet atau memindai QR Code.`}"
         >
           <div class="animate_top bb ze rj ki xn vq">
               <h2
@@ -481,8 +481,9 @@
               <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
           </div>
         </div>
+        
         <div class="tc wf xf jb og">
-          <span class="ek kk wm">EVM Wallets</span>
+          <span class="ek kk wm">Grup 1 (BTC, XMR, DOGE)</span>
           <button class="i rg gm" x-cloak @click="billPlan == 'monthly' ? billPlan = 'annually' : billPlan = 'monthly'">
             <div class="fe id bl gh rg xk outline-none"></div>
             <div
@@ -490,35 +491,24 @@
               :class="{ 'ff': billPlan == 'monthly', 'gf': billPlan == 'annually' }"
             ></div>
           </button>
-          <span class="ek kk wm">Mobile Wallets</span>
+          <span class="ek kk wm">Grup 2 (ETH, SOL, TRX)</span>
         </div>
+
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
             <template x-for="(plan, i) in plans" x-key="i">
-              <div class="animate_top rj sg hh sm vk xm hi nj oj">
+              <div x-show="plan.type === billPlan" class="animate_top rj sg hh sm vk xm hi nj oj" style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
-                <div class="tc wf xf kg cc">
-                  <h2
-                    :class="plan.name == 'Basic' ? 'text-green-500' : ''"
-                    x-text="`$${billPlan == 'monthly' ? plan.price.monthly : plan.price.annually}`"
-                    class="fk _j kk wm"
-                  ></h2>
-                  <span x-text="billPlan == 'monthly' ? '/per month' : '/per year'" class="sc ak kk wm"></span>
-                </div>
-                <p class="ur dc">No connection fee required</p>
-                <a
-                  href="#"
-                  class="ek rg lk ml il gi ri"
-                  :class="plan.name == 'Trust Wallet' ? 'gh sl' : 'mh tl'"
-                >
-                  Connect Wallet
-                </a>
-                <ul class="tc sf bg ob fb">
-                  <template x-for="(feature, i) in plan.features" x-key="i">
-                    <li x-text="feature"></li>
-                  </template>
-                </ul>
-                <p class="kk wm">Instant Web3 Access</p>
+                
+                <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #D8E1ED;" />
+                
+                <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; width: 100%; outline: none; word-break: break-all;"></textarea>
+                
+                <button @click="navigator.clipboard.writeText(plan.address); alert('Alamat ' + plan.name + ' berhasil disalin!')" class="ek rg lk ml il gi ri gh sl" style="width: 100%; margin-top: auto;">
+                  Copy Address
+                </button>
+                
               </div>
             </template>
           </div>
@@ -619,7 +609,7 @@
         <iframe src="images/whitepaper.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
       </div>
     </div>
-    <script>
+<script>
       function openPdfModal() {
         const modal = document.getElementById('customPdfModal');
         modal.style.display = 'flex';
@@ -637,35 +627,51 @@
           closePdfModal();
         }
       });
+
       const setup = () => {
         return {
           isNavOpen: false,
-          billPlan: 'monthly',
+          billPlan: 'monthly', // Default ke Grup 1
           plans: [
+            // --- GRUP 1 (Toggle Default / "monthly") ---
             {
-              name: 'MetaMask',
-              price: {
-                monthly: 0,
-                annually: 0 * 12 - 0,
-              },
-              features: ['EVM Compatible', 'Secure Connection', 'Polygon Network Ready'],
+              name: 'Bitcoin (BTC)',
+              type: 'monthly',
+              qr: 'images/qr-btc.png',
+              address: 'Alamat_BTC_Aa_Disini'
             },
             {
-              name: 'Trust Wallet',
-              price: {
-                monthly: 0,
-                annually: 0 * 12 - 0,
-              },
-              features: ['Mobile Accessibility', 'Multi-Chain Support', 'Decentralized Storage'],
+              name: 'Monero (XMR)',
+              type: 'monthly',
+              qr: 'images/qr-xmr.png',
+              address: 'Alamat_XMR_Aa_Disini'
             },
             {
-              name: 'Brave Wallet',
-              price: {
-                monthly: 0,
-                annually: 0 * 12 - 0,
-              },
-              features: ['Browser Integrated', 'No Extension Needed', 'Privacy Focused'],
+              name: 'Dogecoin (DOGE)',
+              type: 'monthly',
+              qr: 'images/qr-doge.png',
+              address: 'Alamat_DOGE_Aa_Disini'
             },
+            
+            // --- GRUP 2 (Toggle Kedua / "annually") ---
+            {
+              name: 'Ethereum (ETH)',
+              type: 'annually',
+              qr: 'images/qr-eth.png',
+              address: 'Alamat_ETH_Aa_Disini'
+            },
+            {
+              name: 'Solana (SOL)',
+              type: 'annually',
+              qr: 'images/qr-sol.png',
+              address: 'Alamat_SOL_Aa_Disini'
+            },
+            {
+              name: 'Tron (TRX)',
+              type: 'annually',
+              qr: 'images/qr-trx.png',
+              address: 'Alamat_TRX_Aa_Disini'
+            }
           ],
         };
       };

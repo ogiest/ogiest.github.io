@@ -676,9 +676,8 @@
               <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
           </div>
         </div>
-        
         <div class="tc wf xf jb bg uf">
-          <span class="ek kk wm ak">Group 1 (BTC, XMR, DOGE)</span>
+          <span class="ek kk wm ak">Crypto Coins</span>
           <button class="i rg gm bf" x-cloak @click="billPlan = (billPlan === 'monthly' ? 'annually' : 'monthly')">
             <div class="fe id bl gh rg xk outline-none"></div>
             <div
@@ -686,25 +685,19 @@
               :class="{ 'ff': billPlan === 'monthly', 'gf': billPlan === 'annually' }"
             ></div>
           </button>
-          <span class="ek kk wm ak">Group 2 (ETH, SOL, TRX)</span>
+          <span class="ek kk wm ak">Smart Chains (USDT Compatible)</span>
         </div>
-
         <div class="bb ze i va ki xn yq bc">
           <div class="wc qf pn xo jg">
             <template x-for="(plan, i) in plans" x-key="i">
-              
               <div 
                 x-show="plan.type === billPlan" 
                 x-transition
                 class="tc sf wf yf rj sg hh sm vk xm hi nj oj"
               >
-                
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
-                
                 <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #D8E1ED;" />
-                
                 <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
-                
                 <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
                   Copy Address
                 </button>
@@ -850,7 +843,7 @@
               address: 'Your_DOGE_Address_Here'
             },
             {
-              name: 'Ethereum (ETH)',
+              name: 'Ethereum (EVM Address)',
               type: 'annually',
               qr: '{{ "/images/qr-eth.png" | relative_url }}',
               address: 'Your_ETH_Address_Here'

@@ -688,7 +688,7 @@
                 class="tc sf wf yf rj sg hh sm vk xm hi nj oj"
               >
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
-                <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 160px; height: 160px; object-fit: cover; border-radius: 8px; border: 1px solid #D8E1ED;" />
+                <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 260px; height: 260px; object-fit: cover; border-radius: 8px; border: 2px solid #D8E1ED;" />
                 <textarea readonly :value="plan.address" class="vd di _g ch sg rj gb kk" style="resize: none; height: 60px; font-size: 13px; background-color: #F4F7FA; outline: none; word-break: break-all;"></textarea>
                 <button @click="navigator.clipboard.writeText(plan.address); alert(plan.name + ' address copied successfully!')" class="vd ek rg lk ml il gi gh sl" style="margin-top: auto;">
                   Copy Address

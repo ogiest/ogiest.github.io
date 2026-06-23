@@ -8,7 +8,9 @@
     <meta name="keywords" content="decentralized Quran platform, Quran NFTs, Islamic blockchain project, smart contracts, Web3 Quran application, blockchain Tafsir, Islamic crypto collectibles, Quran tokenization, NFTs for Quranic verses, blockchain Quranic authentication">
     <meta name="author" content="quran-web3">
     <title>Quran Web3 | Decentralized Quran & NFT</title>
-  <link rel="icon" href="favicon.png"><link href="style.css" rel="stylesheet"></head>
+    <link rel="icon" href="{{ '/favicon.png' | relative_url }}">
+    <link href="{{ '/style.css' | relative_url }}" rel="stylesheet">
+  </head>
   <body
     x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': false }"
     x-init="
@@ -23,9 +25,9 @@
 >
   <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
     <div class="vd to/4 tc wf yf">
-      <a href="/">
-        <img class="om" src="images/logo-light.png" alt="Logo Light" />
-        <img class="xc nm" src="images/logo-dark.png" alt="Logo Dark" />
+      <a href="{{ '/' | relative_url }}">
+        <img class="om" src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo Light" />
+        <img class="xc nm" src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo Dark" />
       </a>
       <button class="po rc" @click="navigationOpen = !navigationOpen">
         <span class="rc i pf re pd">
@@ -47,10 +49,10 @@
     >
       <nav>
         <ul class="tc _o sf yo cg ep">
-          <li><a href="/" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
-          <li><a href="/#mint" class="xl">Mint</a></li>
-          <li><a href="/#blog" class="xl">Blog</a></li>
-          <li><a href="/#donate" class="xl">Donate</a></li>
+              <li><a href="{{ '/' | relative_url }}" class="xl" :class="{ 'mk': page === 'home' }">Home</a></li>
+              <li><a href="{{ '/#mint' | relative_url }}" class="xl">Mint</a></li>
+              <li><a href="{{ '/#blog' | relative_url }}" class="xl">Blog</a></li>
+              <li><a href="{{ '/#donate' | relative_url }}" class="xl">Donate</a></li>
         </ul>
       </nav>
       <div class="tc wf ig pb no">
@@ -60,10 +62,10 @@
                <svg :class="{ 'wn' : page === 'home', 'xh' : page === 'home' && stickyMenu }" class="th om" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.0908 18.6363C10.3549 18.6363 8.69 17.9467 7.46249 16.7192C6.23497 15.4916 5.54537 13.8268 5.54537 12.0908C5.54537 10.3549 6.23497 8.69 7.46249 7.46249C8.69 6.23497 10.3549 5.54537 12.0908 5.54537C13.8268 5.54537 15.4916 6.23497 16.7192 7.46249C17.9467 8.69 18.6363 10.3549 18.6363 12.0908C18.6363 13.8268 17.9467 15.4916 16.7192 16.7192C15.4916 17.9467 13.8268 18.6363 12.0908 18.6363ZM12.0908 16.4545C13.2481 16.4545 14.358 15.9947 15.1764 15.1764C15.9947 14.358 16.4545 13.2481 16.4545 12.0908C16.4545 10.9335 15.9947 9.8236 15.1764 9.00526C14.358 8.18692 13.2481 7.72718 12.0908 7.72718C10.9335 7.72718 9.8236 8.18692 9.00526 9.00526C8.18692 9.8236 7.72718 10.9335 7.72718 12.0908C7.72718 13.2481 8.18692 14.358 9.00526 15.1764C9.8236 15.9947 10.9335 16.4545 12.0908 16.4545ZM10.9999 0.0908203H13.1817V3.36355H10.9999V0.0908203ZM10.9999 20.8181H13.1817V24.0908H10.9999V20.8181ZM2.83446 4.377L4.377 2.83446L6.69082 5.14828L5.14828 6.69082L2.83446 4.37809V4.377ZM17.4908 19.0334L19.0334 17.4908L21.3472 19.8046L19.8046 21.3472L17.4908 19.0334ZM19.8046 2.83337L21.3472 4.377L19.0334 6.69082L17.4908 5.14828L19.8046 2.83446V2.83337ZM5.14828 17.4908L6.69082 19.0334L4.377 21.3472L2.83446 19.8046L5.14828 17.4908ZM24.0908 10.9999V13.1817H20.8181V10.9999H24.0908ZM3.36355 10.9999V13.1817H0.0908203V10.9999H3.36355Z" fill=""/>
                 </svg>
-                <img class="xc nm" src="images/icon-moon.svg" alt="Moon" />
+                <img class="xc nm" src="{{ '/images/icon-moon.svg' | relative_url }}" alt="Moon" />
               </label>
             </div>
-            <a href="/wp.html" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
+            <a href="{{ '/wp.html' | relative_url }}" :class="{ 'nk yl' : page === 'home', 'ok' : page === 'home' && stickyMenu }" class="ek pk xl">Whitepaper</a>
             <a href="https://ipfs.io/ipns/quran-web3.nft" target="_blank" :class="{ 'hh/[0.15]' : page === 'home', 'sh' : page === 'home' && stickyMenu }" class="lk gh dk rg tc wf xf _l gi hi">Web3 Link</a>
           </div>
         </div>
@@ -72,11 +74,11 @@
     <main>
       <section class="gj do ir hj sp jr i pg">
         <div class="xc fn zd/2 2xl:ud-w-187.5 bd 2xl:ud-h-171.5 h q r">
-          <img src="images/shape-01.svg" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
-          <img src="images/shape-02.svg" alt="shape" class="xc 2xl:ud-block h u p va" />
-          <img src="images/shape-03.svg" alt="shape" class="xc 2xl:ud-block h v w va" />
-          <img src="images/shape-04.svg" alt="shape" class="h q r" />
-          <img src="images/hero.png" alt="Quran" class="h q r ua" />
+          <img src="{{ '/images/shape-01.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h t -ud-left-[10%] ua" />
+          <img src="{{ '/images/shape-02.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h u p va" />
+          <img src="{{ '/images/shape-03.svg' | relative_url }}" alt="shape" class="xc 2xl:ud-block h v w va" />
+          <img src="{{ '/images/shape-04.svg' | relative_url }}" alt="shape" class="h q r" />
+          <img src="{{ '/images/hero.png' | relative_url }}" alt="Quran" class="h q r ua" />
         </div>
         <div class="bb ze ki xn 2xl:ud-px-0">
           <div class="tc _o">
@@ -86,7 +88,7 @@
                 The Quran Web3 Project merges the teachings of the Quran with the potential of blockchain technology. It creates a decentralized platform where users can securely access Quranic translations, interpretations, and scholarly insights.
               </p>
               <div class="tc tf yo zf mb">
-                <a href="/wp.html" class="ek jk lk gh gi hi rg ml il vc _d _l"
+                <a href="{{ '/wp.html' | relative_url }}" class="ek jk lk gh gi hi rg ml il vc _d _l"
                   >Whitepaper</a
                 >
                 <span class="tc sf">
@@ -103,7 +105,7 @@
           <div class="tc uf zo xf ap zf bp mq">
             <div class="animate_top kn to/3 tc cg oq">
               <div class="tc wf xf cf ae cd rg mh">
-                <img src="images/icon-01.svg" alt="Icon" />
+                <img src="{{ '/images/icon-01.svg' | relative_url }}" alt="Icon" />
               </div>
               <div>
                 <h4 class="ek yj go kk wm xb">Transparency</h4>
@@ -112,7 +114,7 @@
             </div>
             <div class="animate_top kn to/3 tc cg oq">
               <div class="tc wf xf cf ae cd rg nh">
-                <img src="images/icon-02.svg" alt="Icon" />
+                <img src="{{ '/images/icon-02.svg' | relative_url }}" alt="Icon" />
               </div>
               <div>
                 <h4 class="ek yj go kk wm xb">Global Accessibility</h4>
@@ -121,7 +123,7 @@
             </div>
             <div class="animate_top kn to/3 tc cg oq">
               <div class="tc wf xf cf ae cd rg oh">
-                <img src="images/icon-03.svg" alt="Icon" />
+                <img src="{{ '/images/icon-03.svg' | relative_url }}" alt="Icon" />
               </div>
               <div>
                 <h4 class="ek yj go kk wm xb">Decentralization</h4>
@@ -136,14 +138,14 @@
           <div class="tc wf gg qq">
             <div class="animate_left xc gn gg jn/2 i">
               <div>
-                <img src="images/shape-05.svg" alt="Shape" class="h -ud-left-5 x" />
-                <img src="images/about-01.png" alt="About" class="ib" />
-                <img src="images/about-02.png" alt="About" />
+                <img src="{{ '/images/shape-05.svg' | relative_url }}" alt="Shape" class="h -ud-left-5 x" />
+                <img src="{{ '/images/about-01.png' | relative_url }}" alt="About" class="ib" />
+                <img src="{{ '/images/about-02.png' | relative_url }}" alt="About" />
               </div>
               <div>
-                <img src="images/shape-06.svg" alt="Shape" />
-                <img src="images/about-03.png" alt="About" class="ob gb" />
-                <img src="images/shape-07.svg" alt="Shape" class="bb" />
+                <img src="{{ '/images/shape-06.svg' | relative_url }}" alt="Shape" />
+                <img src="{{ '/images/about-03.png' | relative_url }}" alt="About" class="ob gb" />
+                <img src="{{ '/images/shape-07.svg' | relative_url }}" alt="Shape" class="bb" />
               </div>
             </div>
             <div class="animate_right jn/2">
@@ -153,7 +155,7 @@
               <a href="javascript:void(0);" onclick="openPdfModal()" class="vc wf hg mb">
                 <span class="tc wf xf be dd rg i gh ua">
                   <span class="nf h vc yc vd rg gh qk -ud-z-1"></span>
-                  <img src="images/icon-play.svg" alt="Play" />
+                  <img src="{{ '/images/icon-play.svg' | relative_url }}" alt="Play" />
                 </span>
                 <span class="ek xj kk wm">EXPLORE THE PLATFORM</span>
               </a>
@@ -163,10 +165,10 @@
       </section>
       <section class="i pg ji gp uq">
         <span class="rc h s r vd fd/5 fh rm"></span>
-        <img src="images/shape-08.svg" alt="Shape Bg" class="h q r" />
-        <img src="images/shape-09.svg" alt="Shape" class="of h y z/2" />
-        <img src="images/shape-10.svg" alt="Shape" class="h _ aa" />
-        <img src="images/shape-11.svg" alt="Shape" class="of h m ba" />
+        <img src="{{ '/images/shape-08.svg' | relative_url }}" alt="Shape Bg" class="h q r" />
+        <img src="{{ '/images/shape-09.svg' | relative_url }}" alt="Shape" class="of h y z/2" />
+        <img src="{{ '/images/shape-10.svg' | relative_url }}" alt="Shape" class="h _ aa" />
+        <img src="{{ '/images/shape-11.svg' | relative_url }}" alt="Shape" class="of h m ba" />
         <div
           x-data="{ sectionTitle: `Platform`}"
         >
@@ -182,7 +184,7 @@
           <div class="wc qf pn xo gg cp">
             <div class="animate_top rj">
               <div class="c i pg z-1">
-                <img class="vd" src="images/team-01.png" alt="Team" />
+                <img class="vd" src="{{ '/images/team-01.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -195,7 +197,7 @@
             </div>
             <div class="animate_top rj">
               <div class="c i pg z-1">
-                <img class="vd" src="images/team-02.png" alt="Team" />
+                <img class="vd" src="{{ '/images/team-02.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -208,7 +210,7 @@
             </div>
             <div class="animate_top rj">
               <div class="c i pg z-1">
-                <img class="vd" src="images/team-03.png" alt="Team" />
+                <img class="vd" src="{{ '/images/team-03.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
                   <span class="h -ud-left-5 -ud-bottom-21 rc de gd gh if wa"></span>
                   <span class="h s p rc vd hd mh va"></span>
@@ -226,32 +228,32 @@
         <div class="bb ze ki xn yq mb en">
           <div class="wc qf pn xo ng">
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-04.svg" alt="Icon" />
+              <img src="{{ '/images/icon-04.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Polygon Blockchain</h4>
               <p>Leveraging the Polygon blockchain, known for its security and robust smart contract capabilities.</p>
             </div>
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-06.svg" alt="Icon" />
+              <img src="{{ '/images/icon-06.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Smart Contracts</h4>
               <p>Self-executing contracts automate processes ensuring fair rewards and efficient interactions.</p>
             </div>
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-05.svg" alt="Icon" />
+              <img src="{{ '/images/icon-05.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Data Encryption</h4>
               <p>State-of-the-art encryption protects user data and interactions from unauthorized access.</p>
             </div>
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-05.svg" alt="Icon" />
+              <img src="{{ '/images/icon-05.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Decentralized Storage</h4>
               <p>Minimizes risk of loss by ensuring materials are not stored in a single centralized location.</p>
             </div>
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-06.svg" alt="Icon" />
+              <img src="{{ '/images/icon-06.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Immutable Records</h4>
               <p>Blockchain provides an immutable and tamper-proof record of Quranic resources.</p>
             </div>
             <div class="animate_top sg oi pi zq ml il am cn _m">
-              <img src="images/icon-07.svg" alt="Icon" />
+              <img src="{{ '/images/icon-07.svg' | relative_url }}" alt="Icon" />
               <h4 class="ek zj kk wm nb _b">Long-Term Preservation</h4>
               <p>Data durability and version control ensure Quranic resources are available for future generations.</p>
             </div>
@@ -438,11 +440,11 @@
               <div class="yh">
                 <div class="tc uf wf ag jq">
                   <div class="tc wf ag">
-                    <img src="{{ 'images/icon-man.svg' | relative_url }}" alt="User" />
+                    <img src="{{ '/images/icon-man.svg' | relative_url }}" alt="User" />
                     <p>{{ post.author | default: "Zamil" }}</p>
                   </div>
                   <div class="tc wf ag">
-                    <img src="{{ 'images/icon-calender.svg' | relative_url }}" alt="Calender" />
+                    <img src="{{ '/images/icon-calender.svg' | relative_url }}" alt="Calender" />
                     <p>{{ post.date | date: "%b %d" }}</p>
                   </div>
                 </div>
@@ -699,7 +701,7 @@
         </div>
       </section>
       <section class="i pg gh ji">
-        <img class="h p q" src="images/shape-16.svg" alt="Bg Shape" />
+        <img class="h p q" src="{{ '/images/shape-16.svg' | relative_url }}" alt="Bg Shape" />
           <div class="bb ye i z-10 ki xn dr">
             <div class="tc uf sn tn un gg">
               <div class="animate_left to/2">
@@ -725,8 +727,8 @@
           <div class="tc uf ap gg fp">
             <div class="animate_top zd/2 to/4">
               <a href="{{ '/' | relative_url }}">
-                <img src="{{ 'images/logo-light.png' | relative_url }}" alt="Logo" class="om" />
-                <img src="{{ 'images/logo-dark.png' | relative_url }}" alt="Logo" class="xc nm" />
+                <img src="{{ '/images/logo-light.png' | relative_url }}" alt="Logo" class="om" />
+                <img src="{{ '/images/logo-dark.png' | relative_url }}" alt="Logo" class="xc nm" />
               </a>
               <p class="lc fb">Revolutionizing Quranic studies through Web3, ensuring decentralization, transparency, and collaborative knowledge-sharing.</p>
             </div>
@@ -790,7 +792,7 @@
     <div id="customPdfModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 99999; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
       <div style="position: relative; width: 90%; max-width: 1100px; height: 85vh; background: #111; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
         <button onclick="closePdfModal()" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; z-index: 100000; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">✕</button>
-        <iframe src="images/whitepaper.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+        <iframe src="{{ '/images/whitepaper.pdf' | relative_url }}" style="width: 100%; height: 100%; border: none;"></iframe>
       </div>
     </div>
     <script>
@@ -856,6 +858,6 @@
         };
       };
     </script>
-    <script defer src="bundle.js"></script>
+    <script defer src="{{ '/bundle.js' | relative_url }}"></script>
   </body>
 </html>

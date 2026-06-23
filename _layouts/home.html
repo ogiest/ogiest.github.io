@@ -371,13 +371,17 @@
         <img src="{{ '/images/shape-14.svg' | relative_url }}" alt="Shape" class="h ja ka" />
         <img src="{{ '/images/shape-15.svg' | relative_url }}" alt="Shape" class="h q p" />
         <div class="bb ze i va ki xn br">
-          <div class="animate_top bb ze rj ki xn vq" style="text-align: center; margin-bottom: 3.5rem;">
-            <h2 class="fk vj pr kk wm on/5 gq/2 bb _b">
-              IPFS Deployment Metrics
-            </h2>
-            <p class="bb on/5 wo/5 hq" style="margin-left: auto; margin-right: auto;">
-              Track our current milestone in pinning the Holy Quran onto the decentralized web. Every verified update modifies the cryptographic content identifier (CID), which is seamlessly mapped to our <span class="text-primary" style="font-weight: 600;">quran-web3.nft</span> IPNS routing.
-            </p>
+          <div
+            x-data="{ sectionTitle: `IPFS Deployment Metrics`, sectionTitleText: `Track our current milestone in pinning the Holy Quran onto the decentralized web. Every verified update modifies the cryptographic content identifier (CID), which is seamlessly mapped to our quran-web3.nft IPNS routing.`}"
+          >
+            <div class="animate_top bb ze rj ki xn vq" style="margin-bottom: 3.5rem;">
+                <h2
+                        x-text="sectionTitle"
+                        class="fk vj pr kk wm on/5 gq/2 bb _b"
+                >
+                </h2>
+                <p class="bb on/5 wo/5 hq" x-text="sectionTitleText"></p>
+            </div>
           </div>
           <div class="tc uf sn tn xf un gg">
             <div class="animate_top me/5 ln rj">

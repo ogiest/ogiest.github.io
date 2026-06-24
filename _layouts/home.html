@@ -181,8 +181,8 @@
             </div>
           </div>
           <div class="bb ze i va ki xn xq jb jo">
-          <div class="wc qf pn xo gg cp">
-            <div class="animate_top rj">
+          <div class="tc uf zo xf ap gg cp">
+            <div class="animate_top rj vd kn to/3">
               <div class="c i pg z-1">
                 <img class="vd" src="{{ '/images/team-01.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
@@ -195,7 +195,7 @@
               <h4 class="yj go kk wm ob zb">Quran-Web3.NFT</h4>
               <p>Web3 IPFS Quran with NFT domain</p>
             </div>
-            <div class="animate_top rj">
+            <div class="animate_top rj vd kn to/3">
               <div class="c i pg z-1">
                 <img class="vd" src="{{ '/images/team-02.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
@@ -208,7 +208,7 @@
               <h4 class="yj go kk wm ob zb">Quran-Web3.NFT</h4>
               <p>605 Pages Quran NFTs</p>
             </div>
-            <div class="animate_top rj">
+            <div class="animate_top rj vd kn to/3">
               <div class="c i pg z-1">
                 <img class="vd" src="{{ '/images/team-03.png' | relative_url }}" alt="Team" />
                 <div class="ef im nl il">
@@ -423,14 +423,14 @@
           </div>
         </div>
         <div class="bb ye ki xn vq jb jo">
-          <div class="wc qf pn xo zf iq">
+          <div class="tc uf zo xf ap zf iq">
             {% if site.posts.size == 0 %}
               <div class="animate_top sg vk rm xm yh text-center w-full" style="padding: 40px;">
                 <p class="kk wm xl">No Post Yet</p>
               </div>
             {% endif %}
             {% for post in site.posts limit:3 %}
-            <div class="animate_top sg vk rm xm">
+            <div class="animate_top sg vk rm xm vd kn to/3">
               <div class="c rc i z-1 pg">
                 <img class="w-full" src="{{ post.image | default: 'images/blog-big.png' | relative_url }}" alt="{{ post.title }}" />
                 <div class="im h r s df vd yc wg tc wf xf al hh/20 nl il z-10">
@@ -659,12 +659,12 @@
           <span class="ek kk wm ak">Smart Chains</span>
         </div>
         <div class="bb ze i va ki xn yq bc">
-          <div class="wc qf pn xo jg">
+          <div class="tc uf zo xf ap jg">
             <template x-for="(plan, i) in plans" x-key="i">
               <div 
                 x-show="plan.type === billPlan" 
                 x-transition
-                class="tc sf wf yf rj sg hh sm vk xm hi nj oj"
+                class="tc sf wf yf rj sg hh sm vk xm hi nj oj vd kn to/3"
               >
                 <h4 x-text="plan.name" class="wj kk wm fb"></h4>
                 <img :src="plan.qr" :alt="`QR Code ${plan.name}`" class="bb gb" style="width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: contain; border-radius: 8px; border: 2px solid #D8E1ED;" />
